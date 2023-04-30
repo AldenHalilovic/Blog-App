@@ -1,12 +1,6 @@
-import Layout from '@/Components/Layout/Layout'
-import '@/styles/globals.css'
-import Login from "../Components/login/loginFrom"
+import '../styles/navbar.css';
+import '/styles/footer.css'
 
 export default function App({ Component, pageProps }) {
-  return<Login><Layout>
-  <Component {...pageProps} />
-  </Layout>
-  </Login>
-  
- 
+  return <Component {...pageProps} />;
 }

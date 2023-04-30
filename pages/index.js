@@ -1,5 +1,13 @@
+import Link from "next/link";
+import  Layout  from "../components/Layout";
 export default function Home() {
   return (
-    <h1>Hello World</h1>
-  )
+    <Layout >
+      
+      <Link href={"/about"}>
+    <button>HELLO</button>
+  </Link>
+      
+    </Layout>
+  );
 }

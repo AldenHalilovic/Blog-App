@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 5%;
+    align-items: center;
+    background: #edebdb;
+    box-shadow: 0px 0px 5px black;
+}
+
+.logo {
+    color: #000000;
+    font-size: 22px;
+}
+
+ul {
+    list-style: none;
+}
+
+ul li {
+    display: inline-block;
+}
+
+ul li a {
+    text-decoration: none;
+    color: #46638a;
+    padding: 8px 15px;
+    border-radius: 7px;
+    transition: all .3s ease;
+}
+
+/*
+.buttens Style Below
+*/
+
+.btnstyle {
+    font-size: 13.5px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display:inline-block;
+    text-align: center;
+    font-weight: bold;
+    padding: 10px;
+    border: 3px solid #5e505c;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
+    color: #afa08b;
+    text-decoration: none;
+    z-index: 1;
+  }
+  
+  .btnstyle:before {
+    transition: 0.5s all ease;
+    position: absolute;
+    border-radius: 10px;
+    top: 0;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    opacity: 0;
+    content: '';
+    background-color: white;
+    z-index: -1;
+  }
+  
+  .btnstyle:hover, .btnstyle:focus {
+    color: #98887e;
+  } 
+  
+  .btnstyle:hover:before, .btnstyle:focus:before {
+    transition: 0.5s all ease;
+    left: 0;
+    right: 0;
+    opacity: 1;
+  }
+  
+  .btnstyle:active {
+    transform: scale(0.9);
+  }

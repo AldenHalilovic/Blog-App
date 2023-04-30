@@ -1,0 +1,169 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+footer {
+  color: #fff;
+  background-image: linear-gradient(90deg, #5e505c, #796a6b, #94857b 100%);
+  position: relative;
+  width: 100%;
+  height: 100%;
+  top: 686px;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 960px) {
+  footer {
+    width: 100%;
+  }
+
+  .main {
+    margin: 50px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .logo {
+    grid-column: 1/3;
+  }
+
+  .office {
+    grid-column: 3/5;
+  }
+  .link {
+    grid-column: 1/3;
+  }
+}
+
+@media (max-width: 660px) {
+  .main {
+    gap: 10px;
+    margin: 0;
+  }
+
+  .icons {
+    display: flex;
+  }
+
+  .row {
+    grid-column: 1/4;
+  }
+}
+
+.manik {
+  width: 120px;
+}
+.main {
+  margin: 50px;
+  padding-top: 20px;
+  padding-bottom: 50px;
+  display: grid;
+  gap: 50px;
+  grid-template-columns: repeat(4, 1fr);
+}
+.row {
+  margin-top: 50px;
+}
+.footer-header {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.office-des {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.office a {
+  text-decoration: none;
+  color: #98a8f8;
+}
+.office a:hover {
+  color: #fff;
+}
+.num {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.link-des {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.link-des a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.link-des a:hover {
+  color: #fb2576;
+  transition: linear 0.3s;
+}
+
+
+
+body {
+  font-family: "Open Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+footer {
+  background-color: #272727;
+  text-align: center;
+  text-transform: uppercase;
+  padding-top: 30px;
+  margin-top: auto;
+}
+
+footer li {
+  list-style: none;
+  margin: 10px;
+  display: inline-block;
+}
+
+.icons a {
+  background: #afa08b;
+  color: #272727;
+  padding: 14px;
+  font-size: 20px;
+  border-radius: 100%;
+  display: flex;
+}
+.icons a:hover {
+  color: #ffffff;
+  transition: 0.5s;
+}
+
+.menu a {
+  color: #ffffff;
+  text-transform: capitalize;
+}
+.menu a:hover {
+  color: #000000;
+  transition: 0.5s;
+}
+
+.footer-copyright {
+  background-color: #edebdb;
+  color: black;
+  padding: 15px;
+  margin-top: 30px;
+  text-transform: capitalize;
+}
+
+.footer-copyright p {
+  margin-bottom: 0px;
+}
