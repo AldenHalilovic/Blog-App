@@ -3,6 +3,7 @@ import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, TextField } from "@mui/material";
 import Link from "next/link";
+import axios from "axios";
 
 const defaultValues = {
   email: "",
@@ -29,7 +30,18 @@ export default function RegistrationForm() {
   });
 
   const onSubmit = (data) => {
-    console.log(data);
+    axios.get("/dbUser.json").then((response) => {
+      const dbUser = response.data;
+      const isDataMatched = Object.values(dbUser).some(
+        (value) =>
+          value.email === data.email && value.password === data.password
+      );
+      if (isDataMatched) {
+        console.log("Thank you for you're registration")
+      } else {
+        console.log("Invalid email or password!");
+      }
+    });
   };
 
   return (

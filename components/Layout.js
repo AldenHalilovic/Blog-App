@@ -2,9 +2,14 @@ import { Box } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 import Azel from "../images/Azel.png";
+import { useState } from "react";
+import { set } from "react-hook-form";
 
 
 export default function layout({ children }) {
+
+
+  const [trueEn,setfalseEn] = useState(false)
   return (
     <Box width={"100%"} display="flex" flexDirection="column">
       <Box width="100%">
@@ -14,7 +19,7 @@ export default function layout({ children }) {
             <Box display="flex">
               <Image src={Azel} alt="" width={150} height={55}/>
             </Box>
-            <ul>
+            {setfalseEn ? <ul>
               <li>
                 <Link href={"/login"}>
                   <button className="btnstyle">Login</button>
@@ -25,7 +30,11 @@ export default function layout({ children }) {
                   <button className="btnstyle">Register</button>
                 </Link>
               </li>
-            </ul>
+            </ul> 
+            :
+            <div>hello</div>
+            }
+            
           </nav>
         </Box>
       </Box>
@@ -37,24 +46,24 @@ export default function layout({ children }) {
         <footer>
           <ul className="icons">
             <li>
-              <Link href={"twitter"}>
+              {/* <Link href={"twitter"}>
                 <Image src=""></Image>
-              </Link>
+              </Link> */}
             </li>
             <li>
-              <Link href={"Instagram"}>
+              {/* <Link href={"Instagram"}>
                 <Image src=""></Image>
-              </Link>
+              </Link> */}
             </li>
             <li>
-              <Link href={"github"}>
+              {/* <Link href={"github"}>
                 <Image src=""></Image>
-              </Link>
+              </Link> */}
             </li>
             <li>
-              <Link href={"linkedin"}>
+              {/* <Link href={"linkedin"}>
                 <Image src=""></Image>
-              </Link>
+              </Link> */}
             </li>
           </ul>
           <ul className="menu">
