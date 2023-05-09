@@ -2,7 +2,7 @@ import { Box } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 import Azel from "../images/Azel.png";
-import Twitter from "../images/Twitter.png"
+
 
 export default function layout({ children }) {
   return (
@@ -16,12 +16,12 @@ export default function layout({ children }) {
             </Box>
             <ul>
               <li>
-                <Link href={"/#"}>
+                <Link href={"/login"}>
                   <button className="btnstyle">Login</button>
                 </Link>
               </li>
               <li>
-                <Link href={"/#"}>
+                <Link href={"/register"}>
                   <button className="btnstyle">Register</button>
                 </Link>
               </li>
@@ -35,7 +35,7 @@ export default function layout({ children }) {
       {/*This is the Footer Bar (Footer)*/}
       <Box width="100%" display="flex">
         <footer>
-          <ul class="icons">
+          <ul className="icons">
             <li>
               <Link href={"twitter"}>
                 <Image src=""></Image>
@@ -57,7 +57,7 @@ export default function layout({ children }) {
               </Link>
             </li>
           </ul>
-          <ul class="menu">
+          <ul className="menu">
             <li>
               <Link href={"WIP"}>WIP</Link>
             </li>
@@ -74,7 +74,7 @@ export default function layout({ children }) {
               <Link href={"WIP"}>WIP</Link>
             </li>
           </ul>
-          <div class="footer-copyright">
+          <div className="footer-copyright">
             <p>Copyright @ 2022 All Rights Reserved.</p>
           </div>
         </footer>
