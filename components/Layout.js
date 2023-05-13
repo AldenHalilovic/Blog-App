@@ -4,12 +4,12 @@ import Link from "next/link";
 import Azel from "../images/Azel.png";
 import { useState } from "react";
 import { set } from "react-hook-form";
-
+import { useRouter } from "next/router";
 
 export default function layout({ children }) {
+  const [trueEn, setfalseEn] = useState(false);
+  const router = useRouter();
 
-
-  const [trueEn,setfalseEn] = useState(false)
   return (
     <Box width={"100%"} display="flex" flexDirection="column">
       <Box width="100%">
@@ -17,9 +17,14 @@ export default function layout({ children }) {
         <Box width="100%">
           <nav>
             <Box display="flex">
-              <Image src={Azel} alt="" width={150} height={55}/>
+              <Link href={"/"}>
+                <Image src={Azel} width={150} height={55} />
+              </Link>
             </Box>
-            {setfalseEn ? <ul>
+            {router.asPath==="/login" || router.asPath === "/register" ? (
+               <></>
+            ) : (
+              <ul>
               <li>
                 <Link href={"/login"}>
                   <button className="btnstyle">Login</button>
@@ -30,11 +35,8 @@ export default function layout({ children }) {
                   <button className="btnstyle">Register</button>
                 </Link>
               </li>
-            </ul> 
-            :
-            <div>hello</div>
-            }
-            
+            </ul>
+            )}
           </nav>
         </Box>
       </Box>

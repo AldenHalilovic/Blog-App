@@ -1,9 +1,10 @@
 import * as yup from "yup";
 import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { Button, TextField } from "@mui/material";
+import { Button, TextField, Typography, Box } from "@mui/material";
 import Link from "next/link";
 import axios from "axios";
+import { register } from "../services/authServices";
 
 const defaultValues = {
   email: "",
@@ -14,7 +15,7 @@ const defaultValues = {
 
 const registrationFormSchema = yup.object({
   email: yup.string().email().required(),
-  password: yup.string().min(8).required(),
+  password: yup.string().min(6).required(),
   firstName: yup.string().required(),
   lastName: yup.string().required(),
 });
@@ -30,108 +31,134 @@ export default function RegistrationForm() {
   });
 
   const onSubmit = (data) => {
-    axios.get("/dbUser.json").then((response) => {
-      const dbUser = response.data;
-      const isDataMatched = Object.values(dbUser).some(
-        (value) =>
-          value.email === data.email && value.password === data.password
-      );
-      if (isDataMatched) {
-        console.log("Thank you for you're registration")
-      } else {
-        console.log("Invalid email or password!");
-      }
-    });
+    // axios.get("/dbUser.json").then((response) => {
+    //   const dbUser = response.data;
+    //   const isDataMatched = Object.values(dbUser).some(
+    //     (value) =>
+    //       value.email === data.email && value.password === data.password
+    //   );
+    //   if (isDataMatched) {
+    //     console.log("Thank you for you're registration")
+    //   } else {
+    //     console.log("Invalid email or password!");
+    //   }
+    // });
+
+    register(data).then((res) => console.log(res));
   };
 
   return (
     <form noValidate autoComplete="off" onSubmit={handleSubmit(onSubmit)}>
-      <Controller
-        control={control}
-        name="firstName"
-        render={({ field }) => (
-          <TextField
-            autoFocus
-            fullWidth
-            id="firstName"
-            label="First Name"
-            sx={{ mb: 4 }}
-            error={!!errors.firstName}
-            helperText={errors.firstName?.message}
-            {...field}
-          />
-        )}
-      />
-      <Controller
-        control={control}
-        name="lastName"
-        render={({ field }) => (
-          <TextField
-            autoFocus
-            fullWidth
-            id="lastName"
-            label="Last Name"
-            sx={{ mb: 4 }}
-            error={!!errors.lastName}
-            helperText={errors.lastName?.message}
-            {...field}
-          />
-        )}
-      />
-      <Controller
-        control={control}
-        name="email"
-        render={({ field }) => (
-          <TextField
-            autoFocus
-            fullWidth
-            id="email"
-            label="Email"
-            sx={{ mb: 4 }}
-            error={!!errors.email}
-            helperText={errors.email?.message}
-            {...field}
-          />
-        )}
-      />
-      <Controller
-        control={control}
-        name="password"
-        render={({ field }) => (
-          <TextField
-            autoFocus
-            fullWidth
-            id="password"
-            label="Password"
-            type={"password"}
-            sx={{ mb: 4 }}
-            error={!!errors.password}
-            helperText={errors.password?.message}
-            {...field}
-          />
-        )}
-      />
-
-      <Button
-        fullWidth
-        size="large"
-        type="submit"
-        variant="contained"
-        sx={{ mb: 7 }}
+      <Box
+        width="100%"
+        justifyContent="space-evenly"
+        gap={"1rem"}
       >
-        Register
-      </Button>
-      <Link href="/login">
+
+
+        <Controller
+          control={control}
+          name="firstName"
+          render={({ field }) => (
+            <TextField
+              autoFocus
+              fullWidth
+              id="firstName"
+              label="First Name"
+              sx={{ mb: 3 }}
+              error={!!errors.firstName}
+              helperText={errors.firstName?.message}
+              {...field}
+            />
+          )}
+        />
+        <Controller
+          control={control}
+          name="lastName"
+          render={({ field }) => (
+            <TextField
+              autoFocus
+              fullWidth
+              id="lastName"
+              label="Last Name"
+              sx={{ mb: 3 }}
+              error={!!errors.lastName}
+              helperText={errors.lastName?.message}
+              {...field}
+            />
+          )}
+        />
+        <Controller
+          control={control}
+          name="email"
+          render={({ field }) => (
+            <TextField
+              autoFocus
+              fullWidth
+              id="email"
+              label="Email"
+              sx={{ mb: 3 }}
+              error={!!errors.email}
+              helperText={errors.email?.message}
+              {...field}
+            />
+          )}
+        />
+        <Controller
+          control={control}
+          name="password"
+          render={({ field }) => (
+            <TextField
+              autoFocus
+              fullWidth
+              id="password"
+              label="Password"
+              type={"password"}
+              sx={{ mb: 3 }}
+              error={!!errors.password}
+              helperText={errors.password?.message}
+              {...field}
+            />
+          )}
+        />
+
         <Button
-          fullWidth
-          size="large"
+          variant="contained"
+          sx={{
+            bgcolor: "#afa08b",
+            textTransform: "none",
+            borderRadius: "15px",
+            paddingY: "12px",
+            paddingX: "25px",
+            color: "white",
+            width: "100%",
+            "&:hover": {
+              backgroundColor: "#5e505c",
+            },
+          }}
           type="submit"
-          variant="outlined"
-          sx={{ mb: 7 }}
         >
-          HAVE AN ACCOUNT : LOGIN
+          Login
         </Button>
-      </Link>
+        <>
+          <Typography
+            display="flex"
+            justifyContent="space-evenly"
+            alignItems="baseline"
+            sx={{ padding: "20px" }}
+            variant="body2"
+            fontWeight="700"
+            color="#0F5D66"
+          >
+            Already have an account{" "}
+            <Link href="/login">
+              <Button sx={{ color: "Green" }} variant="text" type="button">
+                Login
+              </Button>
+            </Link>
+          </Typography>
+        </>
+      </Box>
     </form>
   );
 }

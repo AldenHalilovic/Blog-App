@@ -1,12 +1,13 @@
 import Link from "next/link";
-import  Layout  from "../components/Layout";
-import loginForm from "@//LoginForm";
+import Layout from "../Components/Layout";
+import LoginForm from "../Components/LoginForm";
+import Login from "./login";
 
 export default function Home() {
-  return (
-    <Layout >
-    <loginForm/>
-    
-    </Layout>
+  return( 
+  <Layout>
+
+
+  </Layout>
   );
 }

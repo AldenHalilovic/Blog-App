@@ -1,14 +1,15 @@
 import * as yup from "yup";
 import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { Alert, Button, Snackbar, TextField } from "@mui/material";
+import { TextField, Typography, Box, Button } from "@mui/material";
 import { useState } from "react";
 import Link from "next/link";
 import axios from "axios";
+import { login } from "../services/authServices";
 
 const LoginSchema = yup.object({
   email: yup.string().email().required(),
-  password: yup.string().min(8).required(),
+  password: yup.string().min(6).required(),
 });
 
 export default function LoginForm() {
@@ -29,34 +30,42 @@ export default function LoginForm() {
   const [open, setOpen] = useState(false);
 
   const onSubmit = (data) => {
-
-    axios.get("/dbUser.json").then((response) => {
-      const dbUser = response.data;
-      const isDataMatched = Object.values(dbUser).some(
-        (value) =>
-          value.email === data.email && value.password === data.password
-      );
-      if (isDataMatched) {
-        console.log("Login was Succseful")
-      } else {
-        console.log("Invalid email or password!");
-      }
-    });
+    // get("/dbUser.json").then((response) => {
+    //   const dbUser = response.data;
+    //   const isDataMatched = Object.values(dbUser).some(
+    //     (value) =>
+    //       value.email === data.email && value.password === data.password
+    //   );
+    //   if (isDataMatched) {
+    //     console.log("Login was Succseful")
+    //   } else {
+    //     console.log("Invalid email or password!");
+    //   }
+    // });
+    login(data).then((res) => console.log(res));
   };
 
   return (
-    <>
+    <Box
+      display="flex"
+      width="100%"
+      flexDirection="column"
+      justifyContent="space-evenly"
+      
+
+    >
       <form noValidate autoComplete="off" onSubmit={handleSubmit(onSubmit)}>
         <Controller
           control={control}
           name="email"
           render={({ field }) => (
             <TextField
+              margin="normal"
               autoFocus
               fullWidth
               id="email"
               label="Email"
-              sx={{ mb: 4 }}
+              sx={{ mb: 3 }}
               error={!!errors.email}
               helperText={errors.email?.message}
               {...field}
@@ -68,6 +77,7 @@ export default function LoginForm() {
           name="password"
           render={({ field }) => (
             <TextField
+              margin="normal"
               autoFocus
               fullWidth
               id="password"
@@ -81,31 +91,40 @@ export default function LoginForm() {
           )}
         />
         <Button
-          fullWidth
-          size="large"
-          type="submit"
           variant="contained"
-          sx={{ mb: 7 }}
+          sx={{
+            bgcolor: "#afa08b",
+            textTransform: "none",
+            borderRadius: "15px",
+            paddingY: "12px",
+            paddingX: "25px",
+            color: "white",
+            width: "100%",
+            "&:hover": {
+              backgroundColor: "#5e505c",
+            },
+          }}
+          type="submit"
         >
           Login
         </Button>
-        <Link href="/register">
-          <Button
-            fullWidth
-            size="large"
-            type="submit"
-            variant="outlined"
-            sx={{ mb: 7 }}
+        <>
+          <Typography
+            display="flex"
+            justifyContent="space-evenly"
+            alignItems="baseline"
+            sx={{ padding: "20px" }}
+            variant="body2"
+            fontWeight="700"
+            color="#0F5D66"
           >
-            DON'T HAVE AN ACCOUNT : REIGSTER
-          </Button>
-        </Link>
+            Don't have an account?
+            <Link href="/register">
+              <Button sx={{ color: "Green" }} variant="text" type="button">Register</Button>
+            </Link>
+          </Typography>
+        </>
       </form>
-      <Snackbar open={open} autoHideDuration={200}>
-        <Alert severity="error" sx={{ width: "100%" }}>
-          Email Not Valid
-        </Alert>
-      </Snackbar>
-    </>
+    </Box>
   );
 }
