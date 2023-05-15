@@ -58,12 +58,12 @@ export default function RegistrationForm() {
 
         <Controller
           control={control}
-          name="firstName"
+          name="FirstName"
           render={({ field }) => (
             <TextField
               autoFocus
               fullWidth
-              id="firstName"
+              id="FirstName"
               label="First Name"
               sx={{ mb: 3 }}
               error={!!errors.firstName}
@@ -74,12 +74,12 @@ export default function RegistrationForm() {
         />
         <Controller
           control={control}
-          name="lastName"
+          name="LastName"
           render={({ field }) => (
             <TextField
               autoFocus
               fullWidth
-              id="lastName"
+              id="LastName"
               label="Last Name"
               sx={{ mb: 3 }}
               error={!!errors.lastName}
@@ -151,10 +151,8 @@ export default function RegistrationForm() {
             color="#0F5D66"
           >
             Already have an account{" "}
-            <Link href="/login">
-              <Button sx={{ color: "Green" }} variant="text" type="button">
-                Login
-              </Button>
+            <Link href="/login" style={{textDecoration:"none", color: "green"}}>
+             Login
             </Link>
           </Typography>
         </>

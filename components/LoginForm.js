@@ -119,8 +119,8 @@ export default function LoginForm() {
             color="#0F5D66"
           >
             Don't have an account?
-            <Link href="/register">
-              <Button sx={{ color: "Green" }} variant="text" type="button">Register</Button>
+            <Link href="/register" style={{textDecoration:"none", color: "green"}}>
+             Register
             </Link>
           </Typography>
         </>

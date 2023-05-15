@@ -1,5 +1,5 @@
-import RegistrationForm from "../Components/RegistrationFrom"
-import Layout from "../Components/Layout"
+import RegistrationForm from "../../Components/RegistrationFrom"
+import Layout from "../../Components/Layout"
 import { Box } from "@mui/material"
 
 

@@ -18,7 +18,7 @@ export default function layout({ children }) {
           <nav>
             <Box display="flex">
               <Link href={"/"}>
-                <Image src={Azel} width={150} height={55} />
+                <Image src={Azel} width={150} height={55} alt={""} />
               </Link>
             </Box>
             {router.asPath==="/login" || router.asPath === "/register" ? (
