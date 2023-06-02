@@ -4,7 +4,6 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { TextField, Typography, Box, Button } from "@mui/material";
 import { useState } from "react";
 import Link from "next/link";
-import axios from "axios";
 import { login } from "../services/authServices";
 
 const LoginSchema = yup.object({
@@ -51,8 +50,6 @@ export default function LoginForm() {
       width="100%"
       flexDirection="column"
       justifyContent="space-evenly"
-      
-
     >
       <form noValidate autoComplete="off" onSubmit={handleSubmit(onSubmit)}>
         <Controller
@@ -90,39 +87,43 @@ export default function LoginForm() {
             />
           )}
         />
-        <Button
-          variant="contained"
-          sx={{
-            bgcolor: "#afa08b",
-            textTransform: "none",
-            borderRadius: "15px",
-            paddingY: "12px",
-            paddingX: "25px",
-            color: "white",
-            width: "100%",
-            "&:hover": {
-              backgroundColor: "#5e505c",
-            },
-          }}
-          type="submit"
-        >
-          Login
-        </Button>
-        <>
-          <Typography
+        <Link href="/">
+          <Button
+            variant="contained"
             display="flex"
-            justifyContent="space-evenly"
-            alignItems="baseline"
-            sx={{ padding: "20px" }}
-            variant="body2"
-            fontWeight="700"
-            color="#0F5D66"
+            justifyContent="center"
+            type="submit"
+            sx={{
+              bgcolor: "#afa08b",
+              textTransform: "none",
+              borderRadius: "15px",
+              color: "white",
+              height: "50px",
+              width: "100%",
+              "&:hover": {
+                backgroundColor: "#5e505c",
+              },
+            }}
           >
-            Don't have an account?
-            <Link href="/register" style={{textDecoration:"none", color: "green"}}>
-             Register
-            </Link>
-          </Typography>
+            Login
+          </Button>
+        </Link>
+        <>
+          <Link
+            href="/register"
+            style={{ textDecoration: "none", color: "black" }}
+          >
+            <Typography
+              display="flex"
+              justifyContent="space-evenly"
+              alignItems="baseline"
+              sx={{ padding: "25px" }}
+              variant="body2"
+              fontWeight="700"
+            >
+              Create an Acccount
+            </Typography>
+          </Link>
         </>
       </form>
     </Box>

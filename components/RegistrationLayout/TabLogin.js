@@ -1,5 +1,5 @@
 import React from "react";
-import RegisterForm from "../../components/RegistrationFrom";
+import LoginLayout from "../../components/LoginForm";
 import { Box, Typography, Paper } from "@mui/material";
 import Link from "next/link";
 
@@ -45,8 +45,8 @@ export default function BasicTabs() {
             flexDirection="row"
             width="100%"
           >
-            <Typography variant="h4" textAlign="center">
-            SignUp
+            <Typography variant="h4" textAlign="center" color={"black"}>
+            SignIn
             </Typography>
           </Box>
           <Box
@@ -57,7 +57,7 @@ export default function BasicTabs() {
             padding={0}
             gap="32px"
           >
-            <RegisterForm />
+            <LoginLayout />
           </Box>
         </Paper>
       </Box>

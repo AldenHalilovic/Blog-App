@@ -138,7 +138,7 @@ export default function RegistrationForm() {
           }}
           type="submit"
         >
-          Login
+          Register
         </Button>
         <>
           <Typography

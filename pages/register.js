@@ -1,6 +1,7 @@
-import RegistrationForm from "../../Components/RegistrationFrom"
-import Layout from "../../Components/Layout"
+import RegistrationForm from "../components/RegistrationFrom"
+import Layout from "../components/Layout"
 import { Box } from "@mui/material"
+import TabRegister from "../components/RegistrationLayout/TabRegister"
 
 
 export default function Login(){
@@ -9,7 +10,8 @@ export default function Login(){
  <Box display="flex" width="100%" justifyContent="center"  alignItems='center'>
 
  <Box width="20%" marginTop='40px'>
- <RegistrationForm/>
+ <TabRegister/>
+ 
  </Box>
 
  </Box>

@@ -1,7 +1,7 @@
-import LoginForm from "../../Components/LoginForm";
-import Layout from "../../Components/Layout";
+import LoginForm from "../components/LoginForm";
+import Layout from "../components/Layout";
 import { Box } from "@mui/material";
-import TabRegister from "../../Components/RegistrationLayout/TabRegister"
+import TabLogin from "../components/RegistrationLayout/TabLogin"
 
 export default function Login() {
   return (
@@ -13,8 +13,7 @@ export default function Login() {
         alignItems="center"
       >
         <Box width="20%" marginTop="40px">
-          {/* <LoginForm /> */}
-          <TabRegister/>
+          <TabLogin/>
         </Box>
       </Box>
     </Layout>
