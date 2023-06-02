@@ -1,4 +1,4 @@
-import LoginForm from "../components/LoginForm";
+
 import Layout from "../components/Layout";
 import { Box } from "@mui/material";
 import TabLogin from "../components/RegistrationLayout/TabLogin"

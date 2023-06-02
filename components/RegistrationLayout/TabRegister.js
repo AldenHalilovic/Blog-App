@@ -1,5 +1,5 @@
 import React from "react";
-import RegisterForm from "../../components/RegistrationFrom";
+import RegisterForm from "./RegistrationFrom";
 import { Box, Typography, Paper } from "@mui/material";
 import Link from "next/link";
 

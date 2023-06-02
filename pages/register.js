@@ -1,4 +1,4 @@
-import RegistrationForm from "../components/RegistrationFrom"
+
 import Layout from "../components/Layout"
 import { Box } from "@mui/material"
 import TabRegister from "../components/RegistrationLayout/TabRegister"

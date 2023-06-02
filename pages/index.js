@@ -1,13 +1,11 @@
-import Link from "next/link";
 import Layout from "../components/Layout";
-import LoginForm from "../components/LoginForm";
-import Login from "./login";
+import { store } from "./app/store";
+import { Provider } from "react-redux";
 
 export default function Home() {
-  return( 
-  <Layout>
-
-
-  </Layout>
+  return (
+    <Layout>
+      <Provider store={store}></Provider>
+    </Layout>
   );
 }

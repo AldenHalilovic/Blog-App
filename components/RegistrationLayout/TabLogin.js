@@ -1,5 +1,5 @@
 import React from "react";
-import LoginLayout from "../../components/LoginForm";
+import LoginLayout from "./LoginForm";
 import { Box, Typography, Paper } from "@mui/material";
 import Link from "next/link";
 

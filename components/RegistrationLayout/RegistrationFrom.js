@@ -4,7 +4,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, TextField, Typography, Box } from "@mui/material";
 import Link from "next/link";
 import axios from "axios";
-import { register } from "../services/authServices";
+import { register } from "../../services/authServices";
 
 const defaultValues = {
   email: "",

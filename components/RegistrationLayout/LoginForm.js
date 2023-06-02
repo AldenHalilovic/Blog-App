@@ -4,7 +4,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { TextField, Typography, Box, Button } from "@mui/material";
 import { useState } from "react";
 import Link from "next/link";
-import { login } from "../services/authServices";
+import { login } from "../../services/authServices";
 
 const LoginSchema = yup.object({
   email: yup.string().email().required(),
