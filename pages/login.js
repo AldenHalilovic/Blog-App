@@ -1,11 +1,9 @@
-
-import Layout from "../components/Layout";
 import { Box } from "@mui/material";
-import TabLogin from "../components/RegistrationLayout/TabLogin"
+import TabLogin from "../Components/RegistrationLayout/TabLogin"
 
 export default function Login() {
   return (
-    <Layout>
+
       <Box
         display="flex"
         width="100%"
@@ -16,6 +14,5 @@ export default function Login() {
           <TabLogin/>
         </Box>
       </Box>
-    </Layout>
   );
 }

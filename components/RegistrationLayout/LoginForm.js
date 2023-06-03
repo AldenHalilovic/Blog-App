@@ -4,7 +4,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { TextField, Typography, Box, Button } from "@mui/material";
 import { useState } from "react";
 import Link from "next/link";
-import { login } from "../../services/authServices";
+import { login } from "../../redux/userServices";
+import { useDispatch } from "react-redux";
 
 const LoginSchema = yup.object({
   email: yup.string().email().required(),
@@ -12,6 +13,7 @@ const LoginSchema = yup.object({
 });
 
 export default function LoginForm() {
+  const dispatch = useDispatch()
   const defaultValues = {
     email: "",
     password: "",
@@ -41,7 +43,9 @@ export default function LoginForm() {
     //     console.log("Invalid email or password!");
     //   }
     // });
-    login(data).then((res) => console.log(res));
+    const {email,password} = data;
+    console.log(email,password)
+    dispatch(login({email,password}))
   };
 
   return (
@@ -87,7 +91,7 @@ export default function LoginForm() {
             />
           )}
         />
-        <Link href="/">
+    
           <Button
             variant="contained"
             display="flex"
@@ -107,7 +111,6 @@ export default function LoginForm() {
           >
             Login
           </Button>
-        </Link>
         <>
           <Link
             href="/register"
@@ -121,7 +124,7 @@ export default function LoginForm() {
               variant="body2"
               fontWeight="700"
             >
-              Create an Acccount
+              Create an Account
             </Typography>
           </Link>
         </>

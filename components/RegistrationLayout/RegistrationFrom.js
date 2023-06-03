@@ -141,20 +141,21 @@ export default function RegistrationForm() {
           Register
         </Button>
         <>
-          <Typography
-            display="flex"
-            justifyContent="space-evenly"
-            alignItems="baseline"
-            sx={{ padding: "20px" }}
-            variant="body2"
-            fontWeight="700"
-            color="#0F5D66"
+        <Link
+            href="/login"
+            style={{ textDecoration: "none", color: "black" }}
           >
-            Already have an account{" "}
-            <Link href="/login" style={{textDecoration:"none", color: "green"}}>
-             Login
-            </Link>
-          </Typography>
+            <Typography
+              display="flex"
+              justifyContent="space-evenly"
+              alignItems="baseline"
+              sx={{ padding: "25px" }}
+              variant="body2"
+              fontWeight="700"
+            >
+              Already have an Account
+            </Typography>
+          </Link>
         </>
       </Box>
     </form>
