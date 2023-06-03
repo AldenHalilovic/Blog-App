@@ -5,8 +5,11 @@ import Azel from "../images/Azel.png";
 import { useState } from "react";
 import { set } from "react-hook-form";
 import { useRouter } from "next/router";
+import { useDispatch } from "react-redux";
+import { logout } from "../store/user/userServices";
 
 export default function layout({ children }) {
+  const dispatch = useDispatch()
   const [trueEn, setfalseEn] = useState(false);
   const router = useRouter();
 
@@ -34,6 +37,11 @@ export default function layout({ children }) {
                 <Link href={"/register"}>
                   <button className="btnstyle">Register</button>
                 </Link>
+              </li>
+              <li>
+                  <button className="btnstyle" onClick={() => {
+                    dispatch(logout())
+                  }}>Logout</button>
               </li>
             </ul>
             )}

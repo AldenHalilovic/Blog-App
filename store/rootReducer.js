@@ -2,7 +2,7 @@ import { combineReducers } from "@reduxjs/toolkit";
 import { persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 
-import userPersistReducer from "./userSlice";
+import userPersistReducer from "./user";
 
 const persistConf = {
   key: "root",

@@ -29,6 +29,8 @@ const userSlice = createSlice({
       })
       .addCase(logout, (state) => {
         state.user = null;
+        state.error = null;
+        state.isLoading = false;
       })
       .addCase(PURGE, (state) => {
         state.user = null;

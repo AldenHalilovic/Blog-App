@@ -4,7 +4,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { TextField, Typography, Box, Button } from "@mui/material";
 import { useState } from "react";
 import Link from "next/link";
-import { login } from "../../redux/userServices";
+import { login } from "../../store/user/userServices";
 import { useDispatch } from "react-redux";
 
 const LoginSchema = yup.object({
