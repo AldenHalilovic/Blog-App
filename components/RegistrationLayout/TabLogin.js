@@ -3,8 +3,7 @@ import LoginLayout from "./LoginForm";
 import { Box, Typography, Paper } from "@mui/material";
 import Link from "next/link";
 
-export default function BasicTabs() {
-  const today = new Date();
+export default function TabLogin() {
 
   return (
     <Box
@@ -46,7 +45,7 @@ export default function BasicTabs() {
             width="100%"
           >
             <Typography variant="h4" textAlign="center" color={"black"}>
-            SignIn
+            Login
             </Typography>
           </Box>
           <Box

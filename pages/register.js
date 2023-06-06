@@ -2,7 +2,7 @@ import TabRegister from "../Components/RegistrationLayout/TabRegister"
 import { Box } from "@mui/material"
 
 
-export default function Login(){
+export default function Register(){
     return(
 
  <Box display="flex" width="100%" justifyContent="center"  alignItems='center'>

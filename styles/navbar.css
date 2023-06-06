@@ -10,8 +10,8 @@ nav {
     justify-content: space-between;
     padding: 15px 5%;
     align-items: center;
-    background: #edebdb;
-    box-shadow: 0px 0px 5px black;
+    background: #f7e8d3;
+    box-shadow: 0px 0px 40px black;
 }
 
 .logo {
@@ -47,11 +47,11 @@ ul li a {
     text-align: center;
     font-weight: bold;
     padding: 10px;
-    border: 3px solid #5e505c;
+    border: 3px solid #000000;
     border-radius: 10px;
     position: relative;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
-    color: #afa08b;
+    color: #000000;
     text-decoration: none;
     z-index: 1;
   }
@@ -66,12 +66,12 @@ ul li a {
     bottom: 0;
     opacity: 0;
     content: '';
-    background-color: white;
+    background-color: #efd1a8;
     z-index: -1;
   }
   
   .btnstyle:hover, .btnstyle:focus {
-    color: #98887e;
+    color: #1a1a1a;
   } 
   
   .btnstyle:hover:before, .btnstyle:focus:before {

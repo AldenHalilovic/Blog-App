@@ -125,16 +125,12 @@ export default function RegistrationForm() {
         <Button
           variant="contained"
           sx={{
-            bgcolor: "#afa08b",
+            backgroundImage: "linear-gradient(100deg, #efd1a8, #f7e8d3, #efd1a8 100%)",
             textTransform: "none",
             borderRadius: "15px",
-            paddingY: "12px",
-            paddingX: "25px",
-            color: "white",
+            color: "#1a1a1a",
+            height: "50px",
             width: "100%",
-            "&:hover": {
-              backgroundColor: "#5e505c",
-            },
           }}
           type="submit"
         >

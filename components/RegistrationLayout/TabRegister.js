@@ -3,8 +3,7 @@ import RegisterForm from "./RegistrationFrom";
 import { Box, Typography, Paper } from "@mui/material";
 import Link from "next/link";
 
-export default function BasicTabs() {
-  const today = new Date();
+export default function TabRegister() {
 
   return (
     <Box
@@ -36,6 +35,7 @@ export default function BasicTabs() {
             borderRadius: "15px",
             boxShadow: "0px 34px 114px rgba(0, 0, 0, 0.08)",
             width: { xs: "90%", sm: "50%", md: "480px" },
+            
           }}
         >
           <Box
@@ -46,7 +46,7 @@ export default function BasicTabs() {
             width="100%"
           >
             <Typography variant="h4" textAlign="center">
-            SignUp
+            Register
             </Typography>
           </Box>
           <Box
