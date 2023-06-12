@@ -1,18 +1,29 @@
-import { Avatar, Box } from "@mui/material";
+import { Avatar, Box, MenuItem, Button, Menu } from "@mui/material";
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Zeta from "../images/Zeta.png";
-import { useState } from "react";
 import { useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../store/user/userServices";
 
+
 export default function layout({ children }) {
   const dispatch = useDispatch();
-  const [trueEn, setfalseEn] = useState(false);
   const router = useRouter();
   const user = useSelector((state) => state.user.user);
- 
+
+  
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
   return (
     <Box
       width={"100%"}
@@ -47,24 +58,50 @@ export default function layout({ children }) {
                     </li>
                   </>
                 )}
-               {user&& <Box display="flex"
-                    sx={{ gap:3 }}
+                {user && (
+                  <Box
+                    display="flex"
+                    sx={{ gap: 3 }}
                     justifyContent="center"
-                    alignItems="center">
-                    <Avatar
-                      sx={{ bgcolor: "green", }}
-                      alt={`${user?.fname} ${user?.lname}`}
-                      src={user?.avatar}
-                    />
-                  <button
-                    className="btnstyle"
-                    onClick={() => {
-                      dispatch(logout());
-                    }}
+                    alignItems="center"
                   >
-                    Logout
-                  </button>
-                </Box>}
+                    <div>
+                      <Button
+                        id="basic-button"
+                        aria-controls={open ? "basic-menu" : undefined}
+                        aria-haspopup="true"
+                        aria-expanded={open ? "true" : undefined}
+                        onClick={handleClick}
+                      >
+                        <Avatar
+                          sx={{ bgcolor: "Black" }}
+                          alt={`${user?.fname} ${user?.lname}`}
+                          src={user?.avatar}
+                          onclick={handleClick}
+                        />
+                      </Button>
+                      <Menu
+                        id="basic-menu"
+                        anchorEl={anchorEl}
+                        open={open}
+                        onClose={handleClose}
+                        MenuListProps={{
+                          "aria-labelledby": "basic-button",
+                        }}
+                      >
+                        <MenuItem onClick={handleClose} >Profile</MenuItem>
+                      </Menu>
+                    </div>
+                    <button
+                      className="btnstyle"
+                      onClick={() => {
+                        dispatch(logout());
+                      }}
+                    >
+                      Logout
+                    </button>
+                  </Box>
+                )}
               </ul>
             )}
           </nav>

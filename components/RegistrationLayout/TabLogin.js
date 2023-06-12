@@ -1,64 +1,40 @@
 import React from "react";
 import LoginLayout from "./LoginForm";
-import { Box, Typography, Paper } from "@mui/material";
-import Link from "next/link";
+import { Box, Typography, Paper, Divider } from "@mui/material";
 
 export default function TabLogin() {
-
   return (
-    <Box
-      display="flex"
-      justifyContent="center"
-      alignItems="center"
-      width="100%"
-      height="100%"
-    >
-      
+    <Box width="100%" height="55rem" bgcolor="white">
       <Box
         width="100%"
-        minHeight="100vh"
+        height="95%"
         display="flex"
-        flexDirection="column"
         justifyContent="center"
         alignItems="center"
-        zIndex={300}
       >
-        <Paper
-          sx={{
-            zIndex: "1000",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-            padding: "32px",
-            gap: "32px",
-            borderRadius: "15px",
-            boxShadow: "0px 34px 114px rgba(0, 0, 0, 0.08)",
-            width: { xs: "90%", sm: "50%", md: "480px" },
-          }}
+        <Box
+          display="flex"
+          flexDirection="column"
+          alignItems="center"
+          padding="32px"
+          borderRadius={5}
+          boxShadow = "0px 34px 114px rgba(0, 0, 0, 0.08)"
+          width="700px"
         >
-          <Box
-            display="flex"
-            justifyContent="center"
-            alignItems="center"
-            flexDirection="row"
-            width="100%"
-          >
-            <Typography variant="h4" textAlign="center" color={"black"}>
+          <Typography variant="h4" textAlign="center" color="black">
             Login
-            </Typography>
-          </Box>
+          </Typography>
           <Box
-            width="100%"
             display="flex"
             flexDirection="column"
             justifyContent="center"
-            padding={0}
-            gap="32px"
+            alignItems="center"
+            gap={2}
+            width="100%"
           >
             <LoginLayout />
           </Box>
-        </Paper>
+        </Box>
       </Box>
     </Box>
   );

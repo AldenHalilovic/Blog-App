@@ -1,7 +1,7 @@
 import * as yup from "yup";
 import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { TextField, Typography, Box, Button } from "@mui/material";
+import { TextField, Typography, Box, Button, Divider } from "@mui/material";
 import { useState } from "react";
 import Link from "next/link";
 import { login } from "../../store/user/userServices";
