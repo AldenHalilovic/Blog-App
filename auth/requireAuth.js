@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import NotAuthPage from "../Components/NotAuthPage";
+import NotAuthPage from "../components/NotAuthPage";
 
 
 const requireAuth = (ChildComponent) => {

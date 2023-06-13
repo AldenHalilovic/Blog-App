@@ -1,4 +1,4 @@
-import TabRegister from "../Components/RegistrationLayout/TabRegister"
+import TabRegister from "../components/RegistrationLayout/TabRegister"
 import { Box } from "@mui/material"
 
 

@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import TabLogin from "../Components/RegistrationLayout/TabLogin"
+import TabLogin from "../components/RegistrationLayout/TabLogin"
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
