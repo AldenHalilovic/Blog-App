@@ -1,32 +1,32 @@
 import { Box, Paper, Typography } from "@mui/material";
 import requireAuth from "../auth/requireAuth";
+import Image from "next/image";
+import Link from "next/link";
+import UserComponent from "../Components/Hooks/UserComponent";
 
 function Home() {
   return (
     <>
       <Box width="100%" height="100%" bgcolor="white">
         <Box display="flex" justifyContent="center" margin={20}>
-          <Paper
+          <Box
             sx={{
               padding: "32px",
-              height: "600px",
-              width: "35%",
-            }}
-          ></Paper>
-          <Paper
-            sx={{
-              padding: "32px",
-              height: "600px",
-              width: "35%",
+              height: "650px",
+              width: "90%",
+              bgcolor: "grey",
+              borderTopLeftRadius: "25px",
+              borderBottomLeftRadius: "25px",
             }}
           >
             <Typography
-              fontSize="80px"
+              fontSize="50px"
               lineHeight="1.01"
               fontFamily="Rubik"
               sans-serif
+              borderRight="3px solid black"
             >
-              something something
+              Do something that other will not
             </Typography>
             <Typography
               fontSize="20px"
@@ -34,14 +34,23 @@ function Home() {
               lineHeight="1.5"
               margin="0 0 1.5rem"
             >
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book.
+              text goes here
             </Typography>
-          </Paper>
+
+            <Image src=""></Image>
+          </Box>
+          <Box
+            sx={{
+              padding: "32px",
+              height: "650px",
+              width: "90%",
+              bgcolor: "grey",
+              borderTopRightRadius: "25px",
+              borderBottomRightRadius: "25px",
+            }}
+          ></Box>
+          <UserComponent userId={1}/>
         </Box>
-        <Box display="flex" justifyContent="center" margin={10}></Box>
       </Box>
     </>
   );

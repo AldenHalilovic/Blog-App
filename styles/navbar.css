@@ -10,8 +10,8 @@ nav {
     justify-content: space-between;
     padding: 15px 5%;
     align-items: center;
-    background: #f7e8d3;
-    
+    background: #efd1a8;
+    border-bottom: 2px solid black;
 }
 
 .logo {
@@ -84,3 +84,34 @@ ul li a {
   .btnstyle:active {
     transform: scale(0.9);
   }
+
+
+
+  .cssbtn {
+    display: flex;
+    align-items: center;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 17px;
+    padding: 0.8em 1.5em 0.8em 1.2em;
+    color: white;
+    background: #000000;
+    border: none;
+    letter-spacing: 0.05em;
+    border-radius: 20em;
+  }
+  
+  .cssbtn svg {
+    margin-right: 8px;
+  }
+  
+  .cssbtn:hover {
+    box-shadow: 0 0.5em 1.5em -0.5em #646465be;
+  }
+  
+  .cssbtn:active {
+    box-shadow: 0 0.3em 1em -0.5em #f9f8ffbe;
+  }
+
+
+

@@ -1,4 +1,4 @@
-import { Avatar, Box, MenuItem, Button, Menu } from "@mui/material";
+import { Avatar, Box, MenuItem, Button, Menu, Typography } from "@mui/material";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -44,6 +44,7 @@ export default function layout({ children }) {
               <></>
             ) : (
               <ul>
+
                 {!user && (
                   <>
                     <li>
@@ -65,7 +66,7 @@ export default function layout({ children }) {
                     justifyContent="center"
                     alignItems="center"
                   >
-                    <div>
+                    <Box>
                       <Button
                         id="basic-button"
                         aria-controls={open ? "basic-menu" : undefined}
@@ -91,7 +92,7 @@ export default function layout({ children }) {
                       >
                         <MenuItem onClick={handleClose} >Profile</MenuItem>
                       </Menu>
-                    </div>
+                    </Box>
                     <button
                       className="btnstyle"
                       onClick={() => {
@@ -152,9 +153,9 @@ export default function layout({ children }) {
               <Link href={"WIP"}>WIP</Link>
             </li>
           </ul>
-          <div className="footer-copyright">
-            <p>Copyright @ 2022 All Rights Reserved.</p>
-          </div>
+          <Box className="footer-copyright">
+            <Typography>Copyright @ 2022 All Rights Reserved.</Typography>
+          </Box>
         </footer>
       </Box>
     </Box>

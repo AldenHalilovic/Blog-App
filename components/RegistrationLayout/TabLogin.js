@@ -7,7 +7,7 @@ export default function TabLogin() {
     <Box width="100%" height="55rem" bgcolor="white">
       <Box
         width="100%"
-        height="95%"
+        height="100%"
         display="flex"
         justifyContent="center"
         alignItems="center"

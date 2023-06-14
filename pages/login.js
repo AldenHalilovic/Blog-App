@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import TabLogin from "../components/RegistrationLayout/TabLogin"
+import TabLogin from "../Components/RegistrationLayout/TabLogin"
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
@@ -21,7 +21,8 @@ export default function Login() {
         justifyContent="center"
         alignItems="center"
       >
-        <Box width="20%" marginTop="40px">
+        
+        <Box width="450px">
           <TabLogin/>
         </Box>
       </Box>
