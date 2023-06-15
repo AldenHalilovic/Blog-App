@@ -25,20 +25,18 @@ export default function layout({ children }) {
   };
 
   return (
-    <Box
-      width={"100%"}
-      display="flex"
-      flexDirection="column"
-      alignItems="center"
-    >
+    <Box>
       <Box width="100%">
         {/*This is the Navigation Bar (Header)*/}
         <Box width="100%">
           <nav>
             <Box display="flex">
               <Link href={"/"}>
-                <Image src={Zeta} width={140} height={60} alt={""} />
+                <Image src={Zeta} width={140} height={50} alt={""} />
               </Link>
+            </Box>
+            <Box>
+              
             </Box>
             {router.asPath === "/login" || router.asPath === "/register" ? (
               <></>
@@ -138,19 +136,19 @@ export default function layout({ children }) {
           </ul>
           <ul className="menu">
             <li>
-              <Link href={"WIP"}>WIP</Link>
+              <Link href={"WIP"}>Twitter</Link>
             </li>
             <li>
-              <Link href={"WIP"}>WIP</Link>
+              <Link href={"WIP"}>LinkedIn</Link>
             </li>
             <li>
-              <Link href={"WIP"}>WIP</Link>
+              <Link href={"WIP"}>Facebook</Link>
             </li>
             <li>
-              <Link href={"WIP"}>WIP</Link>
+              <Link href={"WIP"}>Instagram</Link>
             </li>
             <li>
-              <Link href={"WIP"}>WIP</Link>
+              <Link href={"WIP"}>Github</Link>
             </li>
           </ul>
           <Box className="footer-copyright">

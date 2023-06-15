@@ -10,8 +10,7 @@ nav {
     justify-content: space-between;
     padding: 15px 5%;
     align-items: center;
-    background: #efd1a8;
-    border-bottom: 2px solid black;
+
 }
 
 .logo {
@@ -91,13 +90,13 @@ ul li a {
     display: flex;
     align-items: center;
     font-family: inherit;
-    font-weight: 500;
-    font-size: 17px;
+    font-weight: 60;
+    font-size: 20px;
     padding: 0.8em 1.5em 0.8em 1.2em;
     color: white;
     background: #000000;
     border: none;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.01em;
     border-radius: 20em;
   }
   
