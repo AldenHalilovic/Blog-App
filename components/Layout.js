@@ -7,13 +7,11 @@ import { useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../store/user/userServices";
 
-
 export default function layout({ children }) {
   const dispatch = useDispatch();
   const router = useRouter();
   const user = useSelector((state) => state.user.user);
 
-  
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
 
@@ -35,14 +33,10 @@ export default function layout({ children }) {
                 <Image src={Zeta} width={140} height={50} alt={""} />
               </Link>
             </Box>
-            <Box>
-              
-            </Box>
             {router.asPath === "/login" || router.asPath === "/register" ? (
               <></>
             ) : (
               <ul>
-
                 {!user && (
                   <>
                     <li>
@@ -88,7 +82,7 @@ export default function layout({ children }) {
                           "aria-labelledby": "basic-button",
                         }}
                       >
-                        <MenuItem onClick={handleClose} >Profile</MenuItem>
+                        <MenuItem onClick={handleClose}>Profile</MenuItem>
                       </Menu>
                     </Box>
                     <button
@@ -112,47 +106,52 @@ export default function layout({ children }) {
       {/*This is the Footer Bar (Footer)*/}
       <Box width="100%" display="flex">
         <footer>
-          <ul className="icons">
-            <li>
-              {/* <Link href={"twitter"}>
-                <Image src=""></Image>
-              </Link> */}
-            </li>
-            <li>
-              {/* <Link href={"Instagram"}>
-                <Image src=""></Image>
-              </Link> */}
-            </li>
-            <li>
-              {/* <Link href={"github"}>
-                <Image src=""></Image>
-              </Link> */}
-            </li>
-            <li>
-              {/* <Link href={"linkedin"}>
-                <Image src=""></Image>
-              </Link> */}
-            </li>
-          </ul>
           <ul className="menu">
             <li>
-              <Link href={"WIP"}>Twitter</Link>
+              <Link
+                style={{ textDecoration: "none", color: "#00acee" }}
+                href={"https://twitter.com/?lang=en"}
+              >
+                Twitter
+              </Link>
             </li>
             <li>
-              <Link href={"WIP"}>LinkedIn</Link>
+              <Link
+                style={{ textDecoration: "none", color: "#0072b1" }}
+                href={
+                  "https://www.linkedin.com/?original_referer=https%3A%2F%2Fwww.google.com%2F"
+                }
+              >
+                LinkedIn
+              </Link>
             </li>
             <li>
-              <Link href={"WIP"}>Facebook</Link>
+              <Link
+                style={{ textDecoration: "none", color: "#3b5998" }}
+                href={"https://www.facebook.com/"}
+              >
+                Facebook
+              </Link>
             </li>
             <li>
-              <Link href={"WIP"}>Instagram</Link>
+              <Link
+                style={{ textDecoration: "none", color: "#cd486b" }}
+                href={"https://www.instagram.com/"}
+              >
+                Instagram
+              </Link>
             </li>
             <li>
-              <Link href={"WIP"}>Github</Link>
+              <Link
+                style={{ textDecoration: "none", color: "#171515" }}
+                href={"https://github.com/AldenHalilovic"}
+              >
+                Github
+              </Link>
             </li>
           </ul>
           <Box className="footer-copyright">
-            <Typography>Copyright @ 2022 All Rights Reserved.</Typography>
+            <Typography>Copyright @ 2023 All Rights Reserved.</Typography>
           </Box>
         </footer>
       </Box>

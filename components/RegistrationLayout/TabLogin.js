@@ -11,6 +11,7 @@ export default function TabLogin() {
         display="flex"
         justifyContent="center"
         alignItems="center"
+        
       >
         <Box
           display="flex"
@@ -20,6 +21,7 @@ export default function TabLogin() {
           borderRadius={5}
           boxShadow = "0px 34px 114px rgba(0, 0, 0, 0.08)"
           width="700px"
+          sx={{ borderLeft: "4px solid black",  borderBottom: "4px solid black",}}
         >
           <Typography variant="h4" textAlign="center" color="black">
             Login

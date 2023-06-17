@@ -1,37 +1,36 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-
 nav {
-    display: flex;
-    justify-content: space-between;
-    padding: 15px 5%;
-    align-items: center;
-
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 5%;
+  align-items: center;
+  background: #efd1a8;
 }
 
 .logo {
-    color: #000000;
-    font-size: 22px;
+  color: #000000;
+  font-size: 22px;
 }
 
 ul {
-    list-style: none;
+  list-style: none;
 }
 
 ul li {
-    display: inline-block;
+  display: inline-block;
 }
 
 ul li a {
-    text-decoration: none;
-    color: #46638a;
-    padding: 8px 15px;
-    border-radius: 7px;
-    transition: all .3s ease;
+  text-decoration: none;
+  color: #46638a;
+  padding: 8px 15px;
+  border-radius: 7px;
+  transition: all 0.3s ease;
 }
 
 /*
@@ -39,78 +38,75 @@ ul li a {
 */
 
 .btnstyle {
-    font-size: 13.5px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    display:inline-block;
-    text-align: center;
-    font-weight: bold;
-    padding: 10px;
-    border: 3px solid #000000;
-    border-radius: 10px;
-    position: relative;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
-    color: #000000;
-    text-decoration: none;
-    z-index: 1;
-  }
-  
-  .btnstyle:before {
-    transition: 0.5s all ease;
-    position: absolute;
-    border-radius: 10px;
-    top: 0;
-    left: 50%;
-    right: 50%;
-    bottom: 0;
-    opacity: 0;
-    content: '';
-    background-color: #efd1a8;
-    z-index: -1;
-  }
-  
-  .btnstyle:hover, .btnstyle:focus {
-    color: #1a1a1a;
-  } 
-  
-  .btnstyle:hover:before, .btnstyle:focus:before {
-    transition: 0.5s all ease;
-    left: 0;
-    right: 0;
-    opacity: 1;
-  }
-  
-  .btnstyle:active {
-    transform: scale(0.9);
-  }
+  font-size: 13.5px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+  padding: 10px;
+  border: 3px solid #000000;
+  border-radius: 10px;
+  position: relative;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
+  color: #000000;
+  text-decoration: none;
+  z-index: 1;
+}
 
+.btnstyle:before {
+  transition: 0.5s all ease;
+  position: absolute;
+  border-radius: 10px;
+  top: 0;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  opacity: 0;
+  content: "";
+  background-color: #efd1a8;
+  z-index: -1;
+}
 
+.btnstyle:hover,
+.btnstyle:focus {
+  color: #1a1a1a;
+}
 
-  .cssbtn {
-    display: flex;
-    align-items: center;
-    font-family: inherit;
-    font-weight: 60;
-    font-size: 20px;
-    padding: 0.8em 1.5em 0.8em 1.2em;
-    color: white;
-    background: #000000;
-    border: none;
-    letter-spacing: 0.01em;
-    border-radius: 20em;
-  }
-  
-  .cssbtn svg {
-    margin-right: 8px;
-  }
-  
-  .cssbtn:hover {
-    box-shadow: 0 0.5em 1.5em -0.5em #646465be;
-  }
-  
-  .cssbtn:active {
-    box-shadow: 0 0.3em 1em -0.5em #f9f8ffbe;
-  }
+.btnstyle:hover:before,
+.btnstyle:focus:before {
+  transition: 0.5s all ease;
+  left: 0;
+  right: 0;
+  opacity: 1;
+}
 
+.btnstyle:active {
+  transform: scale(0.9);
+}
 
+.cssbtn {
+  display: flex;
+  align-items: center;
+  font-family: inherit;
+  font-weight: 60;
+  font-size: 20px;
+  padding: 0.8em 1.5em 0.8em 1.2em;
+  color: white;
+  background: #000000;
+  border: none;
+  letter-spacing: 0.01em;
+  border-radius: 20em;
+}
 
+.cssbtn svg {
+  margin-right: 8px;
+}
+
+.cssbtn:hover {
+  box-shadow: 0 0.5em 1.5em -0.5em #646465be;
+}
+
+.cssbtn:active {
+  box-shadow: 0 0.3em 1em -0.5em #f9f8ffbe;
+}

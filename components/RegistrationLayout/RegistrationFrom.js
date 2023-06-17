@@ -1,7 +1,7 @@
 import * as yup from "yup";
 import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { Button, TextField, Typography, Box } from "@mui/material";
+import { Button, TextField, Typography, Box, Divider } from "@mui/material";
 import Link from "next/link";
 import axios from "axios";
 import { register } from "../../services/authServices";
@@ -49,13 +49,7 @@ export default function RegistrationForm() {
 
   return (
     <form noValidate autoComplete="off" onSubmit={handleSubmit(onSubmit)}>
-      <Box
-        width="100%"
-        justifyContent="space-evenly"
-        gap={"1rem"}
-      >
-
-
+      <Box width="100%" justifyContent="space-evenly" gap={"1rem"}>
         <Controller
           control={control}
           name="FirstName"
@@ -125,7 +119,8 @@ export default function RegistrationForm() {
         <Button
           variant="contained"
           sx={{
-            backgroundImage: "linear-gradient(100deg, #efd1a8, #f7e8d3, #efd1a8 100%)",
+            backgroundImage:
+              "linear-gradient(100deg, #efd1a8, #f7e8d3, #efd1a8 100%)",
             textTransform: "none",
             borderRadius: "15px",
             color: "#1a1a1a",
@@ -137,7 +132,7 @@ export default function RegistrationForm() {
           Register
         </Button>
         <>
-        <Link
+          <Link
             href="/login"
             style={{ textDecoration: "none", color: "black" }}
           >
@@ -147,9 +142,9 @@ export default function RegistrationForm() {
               alignItems="baseline"
               sx={{ padding: "25px" }}
               variant="body2"
-              fontWeight="700"
+              fontWeight="600"
             >
-              Already have an Account
+              Already on Zeta?
             </Typography>
           </Link>
         </>

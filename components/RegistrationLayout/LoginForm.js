@@ -121,7 +121,7 @@ export default function LoginForm() {
               variant="body2"
               fontWeight="700"
             >
-              Create an Account
+              Create an account
             </Typography>
           </Link>
         </>

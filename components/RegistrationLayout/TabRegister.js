@@ -4,7 +4,6 @@ import { Box, Typography, Paper } from "@mui/material";
 import Link from "next/link";
 
 export default function TabRegister() {
-
   return (
     <Box
       display="flex"
@@ -13,7 +12,6 @@ export default function TabRegister() {
       width="100%"
       height="100%"
     >
-      
       <Box
         width="100%"
         minHeight="100vh"
@@ -35,7 +33,8 @@ export default function TabRegister() {
             borderRadius: "15px",
             boxShadow: "0px 34px 114px rgba(0, 0, 0, 0.08)",
             width: { xs: "90%", sm: "50%", md: "480px" },
-            
+            borderRight: "4px solid black",
+            borderTop: "4px solid black",
           }}
         >
           <Box
@@ -46,7 +45,7 @@ export default function TabRegister() {
             width="100%"
           >
             <Typography variant="h4" textAlign="center">
-            Register
+              Register
             </Typography>
           </Box>
           <Box

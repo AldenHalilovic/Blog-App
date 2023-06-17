@@ -1,58 +1,71 @@
-import { Box, Paper, Typography } from "@mui/material";
+import { Box, Divider, Paper, Typography } from "@mui/material";
 import requireAuth from "../auth/requireAuth";
-import Image from "next/image";
-import Link from "next/link";
-import UserComponent from "../Components/Hooks/UserComponent";
+import UserComponent from "../Components/UserComponent";
+import PostComponent from "../Components/PostComponent";
 
 function Home() {
   return (
-    <>
-      <Box width="100%" height="100%" bgcolor="white">
-        <Box display="flex" justifyContent="center" margin={20}>
-          <Box
-            sx={{
-              padding: "32px",
-              height: "650px",
-              width: "90%",
-              bgcolor: "grey",
-              borderTopLeftRadius: "25px",
-              borderBottomLeftRadius: "25px",
-            }}
-          >
-            <Typography
-              fontSize="50px"
-              lineHeight="1.01"
-              fontFamily="Rubik"
-              sans-serif
-              borderRight="3px solid black"
-            >
-              Do something that other will not
-            </Typography>
-            <Typography
-              fontSize="20px"
-              maxWidth="30em"
-              lineHeight="1.5"
-              margin="0 0 1.5rem"
-            >
-              text goes here
-            </Typography>
+    <Box
+      display="flex"
+      width="100%"
+      height="100vh"
+      bgcolor="white"
+      justifyContent="flex-end"
+    >
+      <Box>
+        <Box
+          sx={{
+            borderLeft: "4px solid black",
+            borderBottom: "4px solid black",
+            padding: "22px",
+            height: "220px",
+            width: "80%",
+            bgcolor: "#EDE4E3",
+            borderRadius: "15px",
+          }}
+          margin={10}
+          gap="10px"
+          flexDirection="column"
+        >
+          <UserComponent userId={1} />
+          <PostComponent pageId={1} />
+        </Box>
 
-            <Image src=""></Image>
-          </Box>
-          <Box
-            sx={{
-              padding: "32px",
-              height: "650px",
-              width: "90%",
-              bgcolor: "grey",
-              borderTopRightRadius: "25px",
-              borderBottomRightRadius: "25px",
-            }}
-          ></Box>
-          <UserComponent userId={1}/>
+        <Box
+          sx={{
+            borderLeft: "4px solid black",
+            borderBottom: "4px solid black",
+            padding: "22px",
+            height: "220px",
+            width: "80%",
+            bgcolor: "#EDE4E3",
+            borderRadius: "15px",
+          }}
+          margin={10}
+          gap="10px"
+          flexDirection="column"
+        >
+          <UserComponent userId={2} />
+          <PostComponent pageId={2} />
         </Box>
       </Box>
-    </>
+      <Box width="30%" height="100%" p="15px">
+        <Box
+          margin={7}
+          sx={{
+            borderRight: "4px solid black",
+            borderBottom: "4px solid black",
+            padding: "32px",
+            height: "530px",
+            width: "60%",
+            bgcolor: "#EDE4E3",
+            borderRadius: "15px",
+          }}
+        >
+          {/* <Typography></Typography> */}
+        </Box>
+      </Box>
+    </Box>
   );
 }
 export default requireAuth(Home);

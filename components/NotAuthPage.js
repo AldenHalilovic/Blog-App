@@ -10,6 +10,8 @@ export default function NotAuthPage() {
         <Box display="flex" justifyContent="center" margin={15}>
           <Paper
             sx={{
+              borderLeft: "4px solid black",
+              borderRight: "4px solid black",
               borderRadius: "30px",
               padding: "32px",
               height: "630px",
@@ -42,7 +44,7 @@ export default function NotAuthPage() {
               lineHeight="1.01"
               fontWeight="bold"
             >
-              Resources for makers &
+              The only Blog that we trust
             </Typography>
             <Typography
               fontSize="60px"
@@ -52,7 +54,7 @@ export default function NotAuthPage() {
               justifyContent="center"
               fontWeight="bold"
             >
-              creatives to learn, sell & grow
+             it time to get creative!
             </Typography>
 
             <Typography
@@ -63,8 +65,7 @@ export default function NotAuthPage() {
               display="flex"
               justifyContent="center"
             >
-              The only corporate card and spend management platform designed to
-              help you spend less.
+              The only blog to make you wonder if it real or fake.
             </Typography>
             <Box display="flex" padding="70px" justifyContent="center">
               <Link href={"/login"}>
@@ -73,31 +74,7 @@ export default function NotAuthPage() {
             </Box>
           </Paper>
         </Box>
-
-        
       </Box>
-
-      <Box display="flex" width="40%" margin={4}>
-          <Box
-            sx={{
-              borderRadius: "30px",
-              padding: "32px",
-              height: "550px",
-              width: "60%",
-              bgcolor: "grey",
-            }}
-          ></Box>
-
-          <Box
-            sx={{
-              borderRadius: "30px",
-              padding: "32px",
-              height: "250px",
-              width: "100%",
-              bgcolor: "grey",
-            }}
-          ></Box>
-        </Box>
     </>
   );
 }
