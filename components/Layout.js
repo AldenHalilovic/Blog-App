@@ -6,6 +6,7 @@ import Zeta from "../images/Zeta.png";
 import { useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../store/user/userServices";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function layout({ children }) {
   const dispatch = useDispatch();
@@ -24,81 +25,81 @@ export default function layout({ children }) {
 
   return (
     <Box>
+      {/*This is the Navigation Bar (Header)*/}
       <Box width="100%">
-        {/*This is the Navigation Bar (Header)*/}
-        <Box width="100%">
-          <nav>
-            <Box display="flex">
-              <Link href={"/"}>
-                <Image src={Zeta} width={140} height={50} alt={""} />
-              </Link>
-            </Box>
-            {router.asPath === "/login" || router.asPath === "/register" ? (
-              <></>
-            ) : (
-              <ul>
-                {!user && (
-                  <>
-                    <li>
-                      <Link href={"/login"}>
-                        <button className="btnstyle">Login</button>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href={"/register"}>
-                        <button className="btnstyle">Register</button>
-                      </Link>
-                    </li>
-                  </>
-                )}
-                {user && (
-                  <Box
-                    display="flex"
-                    sx={{ gap: 3 }}
-                    justifyContent="center"
-                    alignItems="center"
+        <nav>
+          <Link href={"/"}>
+            <Image src={Zeta} width={140} height={50} alt={""} />
+          </Link>
+          <Box display="flex" justifyContent="start">
+            <LanguageSwitcher />
+          </Box>
+          {router.asPath === "/login" || router.asPath === "/register" ? (
+            <></>
+          ) : (
+            <ul>
+              {!user && (
+                <>
+                  <li>
+                    <Link href={"/login"}>
+                      <button className="btnstyle">Login</button>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href={"/register"}>
+                      <button className="btnstyle">Register</button>
+                    </Link>
+                  </li>
+                </>
+              )}
+
+              {user && (
+                <Box
+                  display="flex"
+                  sx={{ gap: 1 }}
+                  justifyContent="center"
+                  alignItems="center"
+                >
+                  <button
+                    className="btnstyle"
+                    onClick={() => {
+                      dispatch(logout());
+                    }}
                   >
-                    <Box>
-                      <Button
-                        id="basic-button"
-                        aria-controls={open ? "basic-menu" : undefined}
-                        aria-haspopup="true"
-                        aria-expanded={open ? "true" : undefined}
-                        onClick={handleClick}
-                      >
-                        <Avatar
-                          sx={{ bgcolor: "Black" }}
-                          alt={`${user?.fname} ${user?.lname}`}
-                          src={user?.avatar}
-                          onclick={handleClick}
-                        />
-                      </Button>
-                      <Menu
-                        id="basic-menu"
-                        anchorEl={anchorEl}
-                        open={open}
-                        onClose={handleClose}
-                        MenuListProps={{
-                          "aria-labelledby": "basic-button",
-                        }}
-                      >
-                        <MenuItem onClick={handleClose}>Profile</MenuItem>
-                      </Menu>
-                    </Box>
-                    <button
-                      className="btnstyle"
-                      onClick={() => {
-                        dispatch(logout());
+                    Logout
+                  </button>
+                  <Box>
+                    <Button
+                      id="basic-button"
+                      aria-controls={open ? "basic-menu" : undefined}
+                      aria-haspopup="true"
+                      aria-expanded={open ? "true" : undefined}
+                      onClick={handleClick}
+                    >
+                      <Avatar
+                        sx={{ bgcolor: "Black" }}
+                        alt={`${user?.fname} ${user?.lname}`}
+                        src={user?.avatar}
+                        onclick={handleClick}
+                      />
+                    </Button>
+                    <Menu
+                      id="basic-menu"
+                      anchorEl={anchorEl}
+                      open={open}
+                      onClose={handleClose}
+                      MenuListProps={{
+                        "aria-labelledby": "basic-button",
                       }}
                     >
-                      Logout
-                    </button>
+                      <MenuItem onClick={handleClose}>Profile</MenuItem>
+                    </Menu>
                   </Box>
-                )}
-              </ul>
-            )}
-          </nav>
-        </Box>
+                </Box>
+              )}
+            </ul>
+          )}
+        </nav>
       </Box>
 
       {children}
@@ -150,6 +151,7 @@ export default function layout({ children }) {
               </Link>
             </li>
           </ul>
+
           <Box className="footer-copyright">
             <Typography>Copyright @ 2023 All Rights Reserved.</Typography>
           </Box>

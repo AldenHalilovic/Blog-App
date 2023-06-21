@@ -2,8 +2,19 @@ import { Box, Divider, Paper, Typography } from "@mui/material";
 import requireAuth from "../auth/requireAuth";
 import UserComponent from "../Components/UserComponent";
 import PostComponent from "../Components/PostComponent";
+import { useTranslations } from "next-intl";
+import { GB } from "country-flag-icons/react/3x2";
+import LanguageSwitcher from "../Components/LanguageSwitcher";
 
+export async function getStaticProps(context) {
+  return {
+    props: {
+      messages: (await import(`../locale/${context.locale}.json`)).default,
+    },
+  };
+}
 function Home() {
+  const t = useTranslations("Index");
   return (
     <Box
       display="flex"
@@ -62,7 +73,8 @@ function Home() {
             borderRadius: "15px",
           }}
         >
-          {/* <Typography></Typography> */}
+          <Typography>{t("title")}</Typography>
+          
         </Box>
       </Box>
     </Box>
