@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useMutation, useQueryClient } from "react-query";
 import axios from "axios";
 import { Box, Button, TextField } from "@mui/material";
+import { useTranslations } from "next-intl";
 
 const deletePost = async (postId) => {
   try {
@@ -25,6 +26,7 @@ const editPost = async (postId, updatedPost) => {
 };
 
 const PostComponent = ({ pageId }) => {
+  const t = useTranslations("PostsCo");
   const [isEditing, setIsEditing] = useState(false);
   const [editedPost, setEditedPost] = useState({});
   const {
@@ -83,7 +85,7 @@ const PostComponent = ({ pageId }) => {
               justifyContent="space-between"
               alignItems="flex-end"
               gap={2}
-              padding={2}
+              padding={1}
             >
               <TextField autoFocus label="Title" sx={{ mb: 2 }} />
               <textarea
@@ -97,10 +99,10 @@ const PostComponent = ({ pageId }) => {
               ></textarea>
               <Box display="flex" justifyContent="flex-end" gap={2}>
                 <Button variant="contained" onClick={handleSave}>
-                  Save
+                  {t("save")}
                 </Button>
                 <Button variant="contained" onClick={handleCancel}>
-                  Cancel
+                  {t("cancel")}
                 </Button>
               </Box>
             </Box>
@@ -118,10 +120,10 @@ const PostComponent = ({ pageId }) => {
               </Box>
               <Box display="flex" gap={2}>
                 <Button variant="contained" onClick={handleEdit}>
-                  Edit
+                {t("edit")}
                 </Button>
                 <Button variant="contained" onClick={handleDelete}>
-                  Delete
+                {t("delete")}
                 </Button>
               </Box>
             </Box>

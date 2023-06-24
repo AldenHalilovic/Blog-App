@@ -1,5 +1,29 @@
 {
   "Index": {
-    "title": "Hello world!"
+    "title": "Get unlimited access to everything on Zeta",
+    "title2": "Plans starting at loss than $0.99/ week.",
+    "btnAccess": "Get Access",
+    "peopleyoulike": "People you might be interested",
+    "articles" : "Articles",
+    "follow": "Follow Us"
+  },
+  "NotAuth": {
+    "blog": "Our Blog",
+    "blogL1": "The only blog we trust",
+    "blogL2": "It's time to get creative!",
+    "blogL3": "The only blog that makes you wonder if it's real or fake.",
+    "blogbtn": "Get Started"
+  },
+  "Layout": {
+    "copyrights": "Copyright @ 2023 All Rights Reserved.",
+    "login": "Login",
+    "register": "Register",
+    "logout": "Logout"
+  },
+  "PostsCo": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "edit": "Edit",
+    "delete": "Delete"
   }
 }

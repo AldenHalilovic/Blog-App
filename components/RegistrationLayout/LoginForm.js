@@ -7,12 +7,14 @@ import Link from "next/link";
 import { login } from "../../store/user/userServices";
 import { useDispatch } from "react-redux";
 
+
 const LoginSchema = yup.object({
   email: yup.string().email().required(),
   password: yup.string().min(6).required(),
 });
 
 export default function LoginForm() {
+
   const dispatch = useDispatch()
   const defaultValues = {
     email: "",
@@ -121,7 +123,7 @@ export default function LoginForm() {
               variant="body2"
               fontWeight="700"
             >
-              Create an account
+               Create an Account
             </Typography>
           </Link>
         </>

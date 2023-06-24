@@ -1,6 +1,7 @@
 import { useGetUser } from "../Hooks/useGetUser";
 import { Box } from "@mui/material";
 
+
 const UserComponent = ({ userId }) => {
   const { data: user, isLoading, isError } = useGetUser(userId);
 

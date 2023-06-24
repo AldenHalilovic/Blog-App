@@ -1,5 +1,29 @@
 {
   "Index": {
-    "title": "Hello world! de"
+    "title": "Erhalten Sie uneingeschränkten Zugriff auf alles auf Zeta",
+    "title2": "Tarife ab weniger als 0,99 $ pro Woche.",
+    "btnAccess": "Zugriff erhalten",
+    "peopleyoulike": "Personen, an denen Sie interessiert sein könnten",
+    "articles": "Artikel",
+    "follow": "Folgen Sie uns"
+  },
+  "NotAuth": {
+    "blog": "Unser Blog",
+    "blogL1": "Der einzige Blog, dem wir vertrauen",
+    "blogL2": "Es ist Zeit, kreativ zu werden!",
+    "blogL3": "Der einzige Blog, der Sie fragen lässt, ob er echt oder gefälscht ist.",
+    "blogbtn": "Los geht's"
+  },
+  "Layout": {
+    "copyrights": "Copyright @ 2023 Alle Rechte vorbehalten.",
+    "login": "Einloggen",
+    "register": "Registrieren",
+    "logout": "Ausloggen"
+  },
+  "PostsCo": {
+    "save": "Speichern",
+    "cancel": "Abbrechen",
+    "edit": "Bearbeiten",
+    "delete": "Löschen"
   }
 }

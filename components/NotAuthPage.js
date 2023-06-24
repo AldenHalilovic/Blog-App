@@ -2,8 +2,17 @@ import React from "react";
 import { Box, Paper, Typography, Positions } from "@mui/material";
 import Link from "next/link";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
+export async function getStaticProps(context) {
+  return {
+    props: {
+      messages: (await import(`../locale/${context.locale}.json`)).default,
+    },
+  };
+}
 export default function NotAuthPage() {
+  const t = useTranslations("NotAuth");
   return (
     <>
       <Box width="100%" height="100%">
@@ -31,7 +40,7 @@ export default function NotAuthPage() {
                 padding="35px"
                 fontWeight="bold"
               >
-                Our blog
+                {t("blog")}
               </Typography>
             </Box>
 
@@ -44,7 +53,7 @@ export default function NotAuthPage() {
               lineHeight="1.01"
               fontWeight="bold"
             >
-              The only Blog that we trust
+              {t("blogL1")}
             </Typography>
             <Typography
               fontSize="60px"
@@ -54,7 +63,7 @@ export default function NotAuthPage() {
               justifyContent="center"
               fontWeight="bold"
             >
-             it time to get creative!
+             {t("blogL2")}
             </Typography>
 
             <Typography
@@ -65,11 +74,11 @@ export default function NotAuthPage() {
               display="flex"
               justifyContent="center"
             >
-              The only blog to make you wonder if it real or fake.
+              {t("blogL3")}
             </Typography>
             <Box display="flex" padding="70px" justifyContent="center">
               <Link href={"/login"}>
-                <button className="cssbtn">Get Started</button>
+                <button className="cssbtn">{t("blogbtn")}</button>
               </Link>
             </Box>
           </Paper>

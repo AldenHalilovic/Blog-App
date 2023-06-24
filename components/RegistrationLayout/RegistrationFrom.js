@@ -5,6 +5,7 @@ import { Button, TextField, Typography, Box, Divider } from "@mui/material";
 import Link from "next/link";
 import axios from "axios";
 import { register } from "../../services/authServices";
+import { useTranslations } from "next-intl";
 
 const defaultValues = {
   email: "",
@@ -21,6 +22,7 @@ const registrationFormSchema = yup.object({
 });
 
 export default function RegistrationForm() {
+  const t = useTranslations("RegisterFrom");
   const {
     control,
     handleSubmit,

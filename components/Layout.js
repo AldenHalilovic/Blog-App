@@ -7,12 +7,13 @@ import { useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../store/user/userServices";
 import LanguageSwitcher from "./LanguageSwitcher";
+import { useTranslations } from "next-intl";
 
 export default function layout({ children }) {
   const dispatch = useDispatch();
   const router = useRouter();
   const user = useSelector((state) => state.user.user);
-
+  const t = useTranslations("Layout");
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
 
@@ -28,12 +29,12 @@ export default function layout({ children }) {
       {/*This is the Navigation Bar (Header)*/}
       <Box width="100%">
         <nav>
+          <Box display="flex">
+            <LanguageSwitcher />
+          </Box>
           <Link href={"/"}>
             <Image src={Zeta} width={140} height={50} alt={""} />
           </Link>
-          <Box display="flex" justifyContent="start">
-            <LanguageSwitcher />
-          </Box>
           {router.asPath === "/login" || router.asPath === "/register" ? (
             <></>
           ) : (
@@ -42,12 +43,12 @@ export default function layout({ children }) {
                 <>
                   <li>
                     <Link href={"/login"}>
-                      <button className="btnstyle">Login</button>
+                      <button className="btnstyle">{t("login")}</button>
                     </Link>
                   </li>
                   <li>
                     <Link href={"/register"}>
-                      <button className="btnstyle">Register</button>
+                      <button className="btnstyle">{t("register")}</button>
                     </Link>
                   </li>
                 </>
@@ -60,19 +61,18 @@ export default function layout({ children }) {
                   justifyContent="center"
                   alignItems="center"
                 >
-                  <button
-                    className="btnstyle"
-                    onClick={() => {
-                      dispatch(logout());
-                    }}
-                  >
-                    Logout
-                  </button>
                   <Box>
                     <Button
+                      sx={{
+                        border: "3px solid grey",
+                        borderRadius: "200px",
+                        p: 0,
+                        minWidth: "fit-content",
+                        minHeight: "fit-content",
+                        m: 0,
+                      }}
                       id="basic-button"
                       aria-controls={open ? "basic-menu" : undefined}
-                      aria-haspopup="true"
                       aria-expanded={open ? "true" : undefined}
                       onClick={handleClick}
                     >
@@ -95,6 +95,14 @@ export default function layout({ children }) {
                       <MenuItem onClick={handleClose}>Profile</MenuItem>
                     </Menu>
                   </Box>
+                  <button
+                    className="btnstyle"
+                    onClick={() => {
+                      dispatch(logout());
+                    }}
+                  >
+                    {t("logout")}
+                  </button>
                 </Box>
               )}
             </ul>
@@ -110,7 +118,7 @@ export default function layout({ children }) {
           <ul className="menu">
             <li>
               <Link
-                style={{ textDecoration: "none", color: "#00acee" }}
+                style={{ textDecoration: "none", color:"black" }}
                 href={"https://twitter.com/?lang=en"}
               >
                 Twitter
@@ -118,7 +126,7 @@ export default function layout({ children }) {
             </li>
             <li>
               <Link
-                style={{ textDecoration: "none", color: "#0072b1" }}
+                style={{ textDecoration: "none", olor:"black" }}
                 href={
                   "https://www.linkedin.com/?original_referer=https%3A%2F%2Fwww.google.com%2F"
                 }
@@ -128,7 +136,7 @@ export default function layout({ children }) {
             </li>
             <li>
               <Link
-                style={{ textDecoration: "none", color: "#3b5998" }}
+                style={{ textDecoration: "none", color:"black" }}
                 href={"https://www.facebook.com/"}
               >
                 Facebook
@@ -136,7 +144,7 @@ export default function layout({ children }) {
             </li>
             <li>
               <Link
-                style={{ textDecoration: "none", color: "#cd486b" }}
+                style={{ textDecoration: "none", color:"black" }}
                 href={"https://www.instagram.com/"}
               >
                 Instagram
@@ -144,7 +152,7 @@ export default function layout({ children }) {
             </li>
             <li>
               <Link
-                style={{ textDecoration: "none", color: "#171515" }}
+                style={{ textDecoration: "none",color:"black" }}
                 href={"https://github.com/AldenHalilovic"}
               >
                 Github
@@ -153,7 +161,7 @@ export default function layout({ children }) {
           </ul>
 
           <Box className="footer-copyright">
-            <Typography>Copyright @ 2023 All Rights Reserved.</Typography>
+            <Typography>{t("copyrights")}</Typography>
           </Box>
         </footer>
       </Box>

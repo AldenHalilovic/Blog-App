@@ -1,10 +1,8 @@
-import { Box, Divider, Paper, Typography } from "@mui/material";
+import { Avatar, Box, Button, Divider, Paper, Typography } from "@mui/material";
 import requireAuth from "../auth/requireAuth";
 import UserComponent from "../Components/UserComponent";
 import PostComponent from "../Components/PostComponent";
 import { useTranslations } from "next-intl";
-import { GB } from "country-flag-icons/react/3x2";
-import LanguageSwitcher from "../Components/LanguageSwitcher";
 
 export async function getStaticProps(context) {
   return {
@@ -19,63 +17,200 @@ function Home() {
     <Box
       display="flex"
       width="100%"
-      height="100vh"
+      height="100%"
       bgcolor="white"
       justifyContent="flex-end"
     >
-      <Box>
+      <Box
+        display="flex"
+        flexDirection="column"
+        maxWidth="70%"
+        p="30px"
+        gap="30px"
+      >
+        {/* SearchBar */}
+        <Box
+          display="flex"
+          flexDirection="row-reverse"
+          justifyContent="space-between"
+        >
+          <Box className="search">
+            <Box className="search-box">
+              <Box className="search-field">
+                <input
+                  placeholder="Search..."
+                  className="input"
+                  type="text"
+                ></input>
+                <Box className="search-box-icon">
+                  <button className="btn-icon-content">
+                    <i className="search-icon">
+                      <svg
+                        xmlns="://www.w3.org/2000/svg"
+                        version="1.1"
+                        viewBox="0 0 512 512"
+                      >
+                        <path
+                          d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"
+                          fill="#fff"
+                        ></path>
+                      </svg>
+                    </i>
+                  </button>
+                </Box>
+              </Box>
+            </Box>
+          </Box>
+          <Typography fontSize="22px" fontWeight="bold">
+            {t("articles")}
+          </Typography>
+        </Box>
+        {/* SearchBar */}
+
+        <Divider
+          sx={{
+            height: "auto",
+            borderColor: "lightgrey",
+          }}
+        />
+
         <Box
           sx={{
-            borderLeft: "4px solid black",
-            borderBottom: "4px solid black",
+            boxShadow: "0px 34px 114px rgba(0, 0, 0, 0.10)",
             padding: "22px",
             height: "220px",
-            width: "80%",
-            bgcolor: "#EDE4E3",
+            width: "100%",
+            bgcolor: "#E5E4E4",
             borderRadius: "15px",
           }}
-          margin={10}
           gap="10px"
           flexDirection="column"
         >
           <UserComponent userId={1} />
           <PostComponent pageId={1} />
         </Box>
-
+        <Divider
+          sx={{
+            height: "auto",
+            borderColor: "lightgrey",
+          }}
+        />
         <Box
           sx={{
-            borderLeft: "4px solid black",
-            borderBottom: "4px solid black",
+            boxShadow: "0px 34px 114px rgba(0, 0, 0, 0.10)",
             padding: "22px",
             height: "220px",
-            width: "80%",
-            bgcolor: "#EDE4E3",
+            width: "100%",
+            bgcolor: "#E5E4E4",
             borderRadius: "15px",
           }}
-          margin={10}
           gap="10px"
           flexDirection="column"
         >
           <UserComponent userId={2} />
           <PostComponent pageId={2} />
         </Box>
-      </Box>
-      <Box width="30%" height="100%" p="15px">
-        <Box
-          margin={7}
+        <Divider
           sx={{
-            borderRight: "4px solid black",
-            borderBottom: "4px solid black",
+            height: "auto",
+            borderColor: "lightgrey",
+          }}
+        />
+        <Box
+          sx={{
+            boxShadow: "0px 34px 114px rgba(0, 0, 0, 0.10)",
+            padding: "22px",
+            height: "220px",
+            width: "100%",
+            bgcolor: "#E5E4E4",
+            borderRadius: "15px",
+          }}
+          gap="10px"
+          flexDirection="column"
+        >
+          <UserComponent userId={3} />
+          <PostComponent pageId={3} />
+        </Box>
+      </Box>
+      <Divider
+        orientation="vertical"
+        sx={{
+          height: "auto",
+          borderColor: "lightgrey",
+        }}
+      />
+      {/* RightSide With Salt */}
+      <Box width="50%" height="100%" p="30px">
+        <Box
+          sx={{
             padding: "32px",
-            height: "530px",
-            width: "60%",
-            bgcolor: "#EDE4E3",
+            height: "220px",
+            width: "100%",
+            bgcolor: "#F6F6F6",
             borderRadius: "15px",
           }}
         >
-          <Typography>{t("title")}</Typography>
-          
+          <Box display="flex" flexWrap="wrap">
+            <Typography fontSize="25px" fontFamily="Rubik" sans-serif>
+              {t("title")}
+            </Typography>
+            <Typography>{t("title2")}</Typography>
+            <button className="cssbtn">{t("btnAccess")}</button>
+          </Box>
         </Box>
+
+        <Typography p="14px" display="flex" fontWeight="bold" fontSize="20px">
+          {t("peopleyoulike")}
+        </Typography>
+
+        <Box>
+          <Box display="flex" alignItems="flex-start" marginBottom="15px">
+            <Box style={{ flexGrow: 1 }}>
+              <Typography fontWeight="bold">Alden Halilovikj</Typography>
+              <Typography fontSize="10px">The Creator of Zeta</Typography>
+            </Box>
+            <Button>Follow</Button>
+          </Box>
+
+          <Box display="flex" alignItems="flex-start" marginBottom="15px">
+            <Box style={{ flexGrow: 1 }}>
+              <Typography fontWeight="bold">Samil Asanoski</Typography>
+              <Typography fontSize="10px">Bigger then a Arm</Typography>
+            </Box>
+            <Button>Follow</Button>
+          </Box>
+
+          <Box display="flex" alignItems="flex-start" marginBottom="15px">
+            <Box style={{ flexGrow: 1 }}>
+              <Typography fontWeight="bold">Halil Halilovikj</Typography>
+              <Typography fontSize="10px">Moralna Podorska</Typography>
+            </Box>
+            <Button>Follow</Button>
+          </Box>
+
+          <Box display="flex" alignItems="flex-start" marginBottom="15px">
+            <Box style={{ flexGrow: 1 }}>
+              <Typography fontWeight="bold">Mirsat Sefidanoski</Typography>
+              <Typography fontSize="10px">Mid Senior</Typography>
+            </Box>
+            <Button>Follow</Button>
+          </Box>
+
+          
+          <Box display="flex" alignItems="flex-start" marginBottom="15px">
+            <Box style={{ flexGrow: 1 }}>
+              <Typography fontWeight="bold">Gjuladin Serifoski</Typography>
+              <Typography fontSize="10px">German guy</Typography>
+            </Box>
+            <Button>Follow</Button>
+          </Box>
+
+          <Divider />
+        </Box>
+        {/* RightSide With Salt */}
+        <Typography p="14px" fontWeight="bold" fontSize="20px">
+          {t("follow")}
+        </Typography>
       </Box>
     </Box>
   );
