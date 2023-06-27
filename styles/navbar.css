@@ -65,7 +65,7 @@ ul li a {
   bottom: 0;
   opacity: 0;
   content: "";
-  background-color: #efd1a8;
+  background-color: #baccc8;
   z-index: -1;
 }
 
@@ -229,4 +229,3 @@ ul li a {
 }
 
 /* SocialButton */
-

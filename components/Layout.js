@@ -1,4 +1,13 @@
-import { Avatar, Box, MenuItem, Button, Menu, Typography } from "@mui/material";
+import {
+  Avatar,
+  Box,
+  MenuItem,
+  Button,
+  Menu,
+  Typography,
+  Divider,
+  ListItemIcon,
+} from "@mui/material";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -8,6 +17,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../store/user/userServices";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useTranslations } from "next-intl";
+import { Logout, Settings } from "@mui/icons-material";
+
 
 export default function layout({ children }) {
   const dispatch = useDispatch();
@@ -64,7 +75,7 @@ export default function layout({ children }) {
                   <Box>
                     <Button
                       sx={{
-                        border: "3px solid grey",
+                        border: "2px solid Grey",
                         borderRadius: "200px",
                         p: 0,
                         minWidth: "fit-content",
@@ -77,10 +88,10 @@ export default function layout({ children }) {
                       onClick={handleClick}
                     >
                       <Avatar
-                        sx={{ bgcolor: "Black" }}
+                        sx={{ backgroundColor: "black" }}
                         alt={`${user?.fname} ${user?.lname}`}
                         src={user?.avatar}
-                        onclick={handleClick}
+                        onClick={handleClick}
                       />
                     </Button>
                     <Menu
@@ -92,17 +103,35 @@ export default function layout({ children }) {
                         "aria-labelledby": "basic-button",
                       }}
                     >
-                      <MenuItem onClick={handleClose}>Profile</MenuItem>
+                      <MenuItem onClick={handleClose}>
+                        <Avatar
+                          sx={{ bgcolor: "Black" }}
+                          alt={`${user?.fname} ${user?.lname}`}
+                          src={user?.avatar}
+                          onclick={handleClick}
+                        />
+                        {user?.fname}
+                      </MenuItem>
+                      <Divider />
+
+                      <MenuItem onClick={handleClose}>
+                        <ListItemIcon>
+                          <Settings fontSize="small" />
+                        </ListItemIcon>
+                        Settings
+                      </MenuItem>
+                      <MenuItem
+                        onClick={() => {
+                          dispatch(logout());
+                        }}
+                      >
+                        <ListItemIcon>
+                          <Logout fontSize="small" />
+                        </ListItemIcon>
+                        {t("logout")}
+                      </MenuItem>
                     </Menu>
                   </Box>
-                  <button
-                    className="btnstyle"
-                    onClick={() => {
-                      dispatch(logout());
-                    }}
-                  >
-                    {t("logout")}
-                  </button>
                 </Box>
               )}
             </ul>
@@ -118,7 +147,7 @@ export default function layout({ children }) {
           <ul className="menu">
             <li>
               <Link
-                style={{ textDecoration: "none", color:"black" }}
+                style={{ textDecoration: "none", color: "black" }}
                 href={"https://twitter.com/?lang=en"}
               >
                 Twitter
@@ -126,7 +155,7 @@ export default function layout({ children }) {
             </li>
             <li>
               <Link
-                style={{ textDecoration: "none", olor:"black" }}
+                style={{ textDecoration: "none", olor: "black" }}
                 href={
                   "https://www.linkedin.com/?original_referer=https%3A%2F%2Fwww.google.com%2F"
                 }
@@ -136,7 +165,7 @@ export default function layout({ children }) {
             </li>
             <li>
               <Link
-                style={{ textDecoration: "none", color:"black" }}
+                style={{ textDecoration: "none", color: "black" }}
                 href={"https://www.facebook.com/"}
               >
                 Facebook
@@ -144,7 +173,7 @@ export default function layout({ children }) {
             </li>
             <li>
               <Link
-                style={{ textDecoration: "none", color:"black" }}
+                style={{ textDecoration: "none", color: "black" }}
                 href={"https://www.instagram.com/"}
               >
                 Instagram
@@ -152,7 +181,7 @@ export default function layout({ children }) {
             </li>
             <li>
               <Link
-                style={{ textDecoration: "none",color:"black" }}
+                style={{ textDecoration: "none", color: "black" }}
                 href={"https://github.com/AldenHalilovic"}
               >
                 Github

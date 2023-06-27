@@ -3,6 +3,8 @@ import requireAuth from "../auth/requireAuth";
 import UserComponent from "../Components/UserComponent";
 import PostComponent from "../Components/PostComponent";
 import { useTranslations } from "next-intl";
+import RSideInfo from "../Components/RSideInfo";
+
 
 export async function getStaticProps(context) {
   return {
@@ -139,79 +141,7 @@ function Home() {
           borderColor: "lightgrey",
         }}
       />
-      {/* RightSide With Salt */}
-      <Box width="50%" height="100%" p="30px">
-        <Box
-          sx={{
-            padding: "32px",
-            height: "220px",
-            width: "100%",
-            bgcolor: "#F6F6F6",
-            borderRadius: "15px",
-          }}
-        >
-          <Box display="flex" flexWrap="wrap">
-            <Typography fontSize="25px" fontFamily="Rubik" sans-serif>
-              {t("title")}
-            </Typography>
-            <Typography>{t("title2")}</Typography>
-            <button className="cssbtn">{t("btnAccess")}</button>
-          </Box>
-        </Box>
-
-        <Typography p="14px" display="flex" fontWeight="bold" fontSize="20px">
-          {t("peopleyoulike")}
-        </Typography>
-
-        <Box>
-          <Box display="flex" alignItems="flex-start" marginBottom="15px">
-            <Box style={{ flexGrow: 1 }}>
-              <Typography fontWeight="bold">Alden Halilovikj</Typography>
-              <Typography fontSize="10px">The Creator of Zeta</Typography>
-            </Box>
-            <Button>Follow</Button>
-          </Box>
-
-          <Box display="flex" alignItems="flex-start" marginBottom="15px">
-            <Box style={{ flexGrow: 1 }}>
-              <Typography fontWeight="bold">Samil Asanoski</Typography>
-              <Typography fontSize="10px">Bigger then a Arm</Typography>
-            </Box>
-            <Button>Follow</Button>
-          </Box>
-
-          <Box display="flex" alignItems="flex-start" marginBottom="15px">
-            <Box style={{ flexGrow: 1 }}>
-              <Typography fontWeight="bold">Halil Halilovikj</Typography>
-              <Typography fontSize="10px">Moralna Podorska</Typography>
-            </Box>
-            <Button>Follow</Button>
-          </Box>
-
-          <Box display="flex" alignItems="flex-start" marginBottom="15px">
-            <Box style={{ flexGrow: 1 }}>
-              <Typography fontWeight="bold">Mirsat Sefidanoski</Typography>
-              <Typography fontSize="10px">Mid Senior</Typography>
-            </Box>
-            <Button>Follow</Button>
-          </Box>
-
-          
-          <Box display="flex" alignItems="flex-start" marginBottom="15px">
-            <Box style={{ flexGrow: 1 }}>
-              <Typography fontWeight="bold">Gjuladin Serifoski</Typography>
-              <Typography fontSize="10px">German guy</Typography>
-            </Box>
-            <Button>Follow</Button>
-          </Box>
-
-          <Divider />
-        </Box>
-        {/* RightSide With Salt */}
-        <Typography p="14px" fontWeight="bold" fontSize="20px">
-          {t("follow")}
-        </Typography>
-      </Box>
+     <RSideInfo />
     </Box>
   );
 }
