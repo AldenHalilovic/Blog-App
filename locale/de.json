@@ -1,25 +1,27 @@
 {
   "Index": {
     "title": "Erhalten Sie uneingeschränkten Zugriff auf alles auf Zeta",
-    "title2": "Tarife ab weniger als 0,99 $ pro Woche.",
+    "title2": "Tarife ab weniger als $0,99 pro Woche.",
     "btnAccess": "Zugriff erhalten",
-    "peopleyoulike": "Personen, an denen Sie interessiert sein könnten",
+    "peopleyoulike": "Personen, an denen Sie möglicherweise interessiert sind",
     "articles": "Artikel",
     "FollowUs": "Folgen Sie uns",
-    "Creator": "Der Schöpfer von Zeta"
+    "Creator": "Der Schöpfer von Zeta",
+    "MyProfile": "Mein Profil"
   },
   "NotAuth": {
     "blog": "Unser Blog",
     "blogL1": "Der einzige Blog, dem wir vertrauen",
     "blogL2": "Es ist Zeit, kreativ zu werden!",
-    "blogL3": "Der einzige Blog, der Sie fragen lässt, ob er echt oder gefälscht ist.",
-    "blogbtn": "Los geht's"
+    "blogL3": "Der einzige Blog, der Sie zum Nachdenken bringt, ob er echt oder gefälscht ist.",
+    "blogbtn": "Loslegen"
   },
   "Layout": {
-    "copyrights": "Copyright @ 2023 Alle Rechte vorbehalten.",
-    "login": "Einloggen",
+    "copyrights": "Copyright © 2023 Alle Rechte vorbehalten.",
+    "login": "Anmelden",
     "register": "Registrieren",
-    "logout": "Ausloggen"
+    "logout": "Abmelden",
+    "profile": "Profil"
   },
   "PostsCo": {
     "save": "Speichern",

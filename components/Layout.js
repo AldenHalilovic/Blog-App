@@ -124,7 +124,7 @@ export default function layout({ children }) {
                         <ListItemIcon>
                           <AccountBoxIcon fontSize="small" />
                         </ListItemIcon>
-                        Profile
+                        {t("profile")}
                       </MenuItem>
                       <MenuItem
                         onClick={() => {

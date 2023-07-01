@@ -1,13 +1,22 @@
 import React, { useState } from "react";
 import requireAuth from "../auth/requireAuth";
 import { useTranslations } from "next-intl";
-import { Avatar, Box, Checkbox, IconButton, TextField } from "@mui/material";
+import { Avatar, Box, Button, Checkbox, IconButton, TextField } from "@mui/material";
 import { useSelector } from "react-redux";
 import { GitHub, Instagram, LinkedIn, Twitter } from "@mui/icons-material";
+import Link from "next/link";
+
+export async function getStaticProps(context) {
+  return {
+    props: {
+      messages: (await import(`../locale/${context.locale}.json`)).default,
+    },
+  };
+}
 
 const Profile = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const t = useTranslations("Index", "NotAuth");
+  const t = useTranslations("Index", "NotAuth", "Layout");
   const user = useSelector((state) => state.user.user);
 
   const handleTogglePassword = () => {
@@ -17,7 +26,7 @@ const Profile = () => {
   return (
     <Box height="100vh">
       <Box display="flex" justifyContent="center" p={5}>
-        <h2>My Profile</h2>
+        <h2>{t("MyProfile")}</h2>
       </Box>
       <Box display="flex" flexDirection="column" alignItems="center">
         <Box

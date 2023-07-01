@@ -6,7 +6,8 @@
     "peopleyoulike": "People you might be interested",
     "articles": "Articles",
     "FollowUs": "Follow Us",
-    "Creator": "The Creator of Zeta"
+    "Creator": "The Creator of Zeta",
+    "MyProfile": "My Profile"
   },
   "NotAuth": {
     "blog": "Our Blog",
@@ -19,7 +20,8 @@
     "copyrights": "Copyright @ 2023 All Rights Reserved.",
     "login": "Login",
     "register": "Register",
-    "logout": "Logout"
+    "logout": "Logout",
+    "profile":"Profile"
   },
   "PostsCo": {
     "save": "Save",
