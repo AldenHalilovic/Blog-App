@@ -5,7 +5,8 @@
     "btnAccess": "Get Access",
     "peopleyoulike": "People you might be interested",
     "articles": "Articles",
-    "FollowUs": "Follow Us"
+    "FollowUs": "Follow Us",
+    "Creator": "The Creator of Zeta"
   },
   "NotAuth": {
     "blog": "Our Blog",

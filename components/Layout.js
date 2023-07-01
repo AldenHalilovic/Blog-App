@@ -17,8 +17,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../store/user/userServices";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useTranslations } from "next-intl";
-import { Logout, Settings } from "@mui/icons-material";
-
+import { Logout } from "@mui/icons-material";
+import AccountBoxIcon from "@mui/icons-material/AccountBox";
 
 export default function layout({ children }) {
   const dispatch = useDispatch();
@@ -27,6 +27,10 @@ export default function layout({ children }) {
   const t = useTranslations("Layout");
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
+
+  const handleProfileClick = () => {
+    router.push("/profile");
+  };
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -105,7 +109,9 @@ export default function layout({ children }) {
                     >
                       <MenuItem onClick={handleClose}>
                         <Avatar
-                          sx={{ bgcolor: "Black" }}
+                          sx={{
+                            bgcolor: "Black",
+                          }}
                           alt={`${user?.fname} ${user?.lname}`}
                           src={user?.avatar}
                           onclick={handleClick}
@@ -114,11 +120,11 @@ export default function layout({ children }) {
                       </MenuItem>
                       <Divider />
 
-                      <MenuItem onClick={handleClose}>
+                      <MenuItem onClick={handleProfileClick}>
                         <ListItemIcon>
-                          <Settings fontSize="small" />
+                          <AccountBoxIcon fontSize="small" />
                         </ListItemIcon>
-                        Settings
+                        Profile
                       </MenuItem>
                       <MenuItem
                         onClick={() => {

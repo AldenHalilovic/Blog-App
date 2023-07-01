@@ -1,10 +1,9 @@
-import { Avatar, Box, Button, Divider, Paper, Typography } from "@mui/material";
+import { Box, Divider, Typography } from "@mui/material";
 import requireAuth from "../auth/requireAuth";
 import UserComponent from "../Components/UserComponent";
 import PostComponent from "../Components/PostComponent";
 import { useTranslations } from "next-intl";
 import RSideInfo from "../Components/RSideInfo";
-
 
 export async function getStaticProps(context) {
   return {
@@ -141,7 +140,7 @@ function Home() {
           borderColor: "lightgrey",
         }}
       />
-     <RSideInfo />
+      <RSideInfo />
     </Box>
   );
 }

@@ -100,7 +100,7 @@ export default function LoginForm() {
             justifyContent="center"
             type="submit"
             sx={{
-              backgroundImage: "linear-gradient(100deg, #efd1a8, #f7e8d3, #efd1a8 100%)",
+              backgroundImage: "linear-gradient(120deg,  #557A95, #baccc8, #557A95 100%)",
               textTransform: "none",
               borderRadius: "15px",
               color: "#1a1a1a",

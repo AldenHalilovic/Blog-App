@@ -122,7 +122,7 @@ export default function RegistrationForm() {
           variant="contained"
           sx={{
             backgroundImage:
-              "linear-gradient(100deg, #efd1a8, #f7e8d3, #efd1a8 100%)",
+              "linear-gradient(120deg,  #557A95, #baccc8, #557A95 100%)",
             textTransform: "none",
             borderRadius: "15px",
             color: "#1a1a1a",
@@ -146,7 +146,7 @@ export default function RegistrationForm() {
               variant="body2"
               fontWeight="600"
             >
-              Already on Zeta?
+              Already Registerd
             </Typography>
           </Link>
         </>

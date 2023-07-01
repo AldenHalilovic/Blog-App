@@ -1,12 +1,19 @@
 import React from "react";
-import { Box, Paper, Typography } from "@mui/material";
+import { Box, Paper, Typography, Positions } from "@mui/material";
 import Link from "next/link";
-
+import Image from "next/image";
 import { useTranslations } from "next-intl";
+
+export async function getStaticProps(context) {
+  return {
+    props: {
+      messages: (await import(`../locale/${context.locale}.json`)).default,
+    },
+  };
+}
 
 export default function NotAuthPage() {
   const t = useTranslations("NotAuth");
-  console.log(t);
   return (
     <>
       <Box width="100%" height="100%">
