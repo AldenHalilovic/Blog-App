@@ -4,7 +4,6 @@ import { useTranslations } from "next-intl";
 import { Avatar, Box, Button, Checkbox, IconButton, TextField } from "@mui/material";
 import { useSelector } from "react-redux";
 import { GitHub, Instagram, LinkedIn, Twitter } from "@mui/icons-material";
-import Link from "next/link";
 
 export async function getStaticProps(context) {
   return {

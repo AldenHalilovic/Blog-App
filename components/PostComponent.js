@@ -27,6 +27,7 @@ const editPost = async (postId, updatedPost) => {
 
 const PostComponent = ({ pageId }) => {
   const t = useTranslations("PostsCo");
+  // use out-of-the-box isLoading from useMutation insted of this
   const [isEditing, setIsEditing] = useState(false);
   const [editedPost, setEditedPost] = useState({});
   const {
@@ -36,13 +37,14 @@ const PostComponent = ({ pageId }) => {
   } = useGetPost({ id: pageId });
   console.log(post);
 
+  // move this to custom hook
   const deleteMutation = useMutation(deletePost, {
     onSuccess: () => {
       const queryClient = useQueryClient();
       queryClient.invalidateQueries("Posts");
     },
   });
-
+// move this to custom hook
   const editMutation = useMutation(editPost, {
     onSuccess: () => {
       const queryClient = useQueryClient();
