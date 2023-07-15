@@ -1,63 +1,27 @@
-import { useGetPost } from "../Hooks/UsePosts";
 import React, { useState } from "react";
-import { useMutation, useQueryClient } from "react-query";
-import axios from "axios";
+import { useGetPost } from "../Hooks/UsePosts";
+import { useMutationPost } from "../Hooks/useMutationPost";
 import { Box, Button, TextField } from "@mui/material";
 import { useTranslations } from "next-intl";
 
-const deletePost = async (postId) => {
-  try {
-    await axios.delete(`https://jsonplaceholder.typicode.com/posts/${postId}`);
-  } catch (error) {
-    throw new Error("Failed to delete the post.");
-  }
-};
-
-const editPost = async (postId, updatedPost) => {
-  try {
-    const response = await axios.put(
-      `https://jsonplaceholder.typicode.com/posts/${postId}`,
-      updatedPost
-    );
-    return response.data;
-  } catch (error) {
-    throw new Error("Failed to update the post.");
-  }
-};
-
 const PostComponent = ({ pageId }) => {
   const t = useTranslations("PostsCo");
-  // use out-of-the-box isLoading from useMutation insted of this
-  const [isEditing, setIsEditing] = useState(false);
-  const [editedPost, setEditedPost] = useState({});
+
   const {
     data: post,
     isLoading: isPostLoading,
     isError: isPostError,
   } = useGetPost({ id: pageId });
-  console.log(post);
 
-  // move this to custom hook
-  const deleteMutation = useMutation(deletePost, {
-    onSuccess: () => {
-      const queryClient = useQueryClient();
-      queryClient.invalidateQueries("Posts");
-    },
-  });
-// move this to custom hook
-  const editMutation = useMutation(editPost, {
-    onSuccess: () => {
-      const queryClient = useQueryClient();
-      queryClient.invalidateQueries(["Post", pageId]);
-    },
-  });
-  const handleDelete = () => {
-    deleteMutation.mutate(post.id);
-  };
+  const { deleteMutation, editMutation } = useMutationPost(pageId);
+
+  const [editedPost, setEditedPost] = useState({});
+  const [isEditing, setIsEditing] = useState(false);
 
   const handleEdit = () => {
-    setIsEditing(true);
+    editMutation.reset();
     setEditedPost(post);
+    setIsEditing(true);
   };
 
   const handleSave = () => {
@@ -66,7 +30,14 @@ const PostComponent = ({ pageId }) => {
   };
 
   const handleCancel = () => {
+    editMutation.reset();
     setIsEditing(false);
+  };
+
+  const handleDelete = () => {
+    if (window.confirm("Are you sure you want to delete this post?")) {
+      deleteMutation.mutate(post.id);
+    }
   };
 
   if (isPostLoading) {
@@ -100,10 +71,10 @@ const PostComponent = ({ pageId }) => {
                 }
               ></textarea>
               <Box display="flex" justifyContent="flex-end" gap={2}>
-                <Button variant="contained" onClick={handleSave}>
+                <Button variant="outlined" sx={{color:"black"}} onClick={handleSave}>
                   {t("save")}
                 </Button>
-                <Button variant="contained" onClick={handleCancel}>
+                <Button variant="outlined" sx={{color:"black"}} onClick={handleCancel}>
                   {t("cancel")}
                 </Button>
               </Box>
@@ -121,11 +92,11 @@ const PostComponent = ({ pageId }) => {
                 <h5>{post.body}</h5>
               </Box>
               <Box display="flex" gap={2}>
-                <Button variant="contained" onClick={handleEdit}>
-                {t("edit")}
+                <Button variant="outlined" sx={{color:"black"}} onClick={handleEdit}>
+                  {t("edit")}
                 </Button>
-                <Button variant="contained" onClick={handleDelete}>
-                {t("delete")}
+                <Button variant="outlined" sx={{color:"black"}} onClick={handleDelete}>
+                  {t("delete")}
                 </Button>
               </Box>
             </Box>

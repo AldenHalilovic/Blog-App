@@ -31,7 +31,7 @@ const RSideInfo = () => {
         }}
       >
         <Box display="flex" justifyContent="space-between" flexWrap="wrap">
-          <Typography fontSize="25px" fontFamily="Rubik" sans-serif>
+          <Typography fontSize="25px" fontFamily="Rubik" sans-serif="true">
             {t("title")}
           </Typography>
           <Typography>{t("title2")}</Typography>

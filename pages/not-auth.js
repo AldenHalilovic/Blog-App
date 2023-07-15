@@ -32,7 +32,7 @@ export default function NotAuthPage() {
             <Box display="flex" justifyContent="center">
               <Typography
                 fontFamily="Rubik"
-                sans-serif
+                sans-serif="true"
                 textTransform="capitalize"
                 fontSize="21px"
                 display="flex"
@@ -48,7 +48,7 @@ export default function NotAuthPage() {
             <Typography
               fontSize="57px"
               fontFamily="Rubik"
-              sans-serif
+              sans-serif="true"
               display="flex"
               justifyContent="center"
               lineHeight="1.01"
@@ -59,7 +59,7 @@ export default function NotAuthPage() {
             <Typography
               fontSize="60px"
               fontFamily="Rubik"
-              sans-serif
+              sans-serif="true"
               display="flex"
               justifyContent="center"
               fontWeight="bold"
@@ -71,7 +71,7 @@ export default function NotAuthPage() {
               fontSize="25px"
               padding="25px"
               fontFamily="Rubik"
-              sans-serif
+              sans-serif="true"
               display="flex"
               justifyContent="center"
             >
