@@ -1,2 +1,2 @@
 # Social-app
-Switch Branch to see full Website
+Switch Branch to see entire code
